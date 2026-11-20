@@ -50,8 +50,11 @@ export function initLearningApp(): void {
     leaveHome();
     content.replaceChildren();
 
-    const page = (location.hash.slice(1) || 'home').split('?')[0];
+    const [rawPage, query = ''] = (location.hash.slice(1) || 'home').split('?');
+    const page = rawPage || 'home';
     const [kind, id = ''] = page.split('/');
+    const rawStep = new URLSearchParams(query).get('step');
+    const stepParam = rawStep !== null && /^\d+$/.test(rawStep) ? Number(rawStep) : 0;
     const unit = kind === 'topic' || kind === 'unit' ? units.find(item => item.id === id) : undefined;
     const lab = kind === 'lab' ? findLab(id) : undefined;
     const lesson = kind === 'q' || kind === 'lesson' || kind === 'lab' ? findLesson(id) : undefined;
@@ -65,7 +68,7 @@ export function initLearningApp(): void {
       renderLabs(content);
     } else if (lab) {
       title = `3D 宇宙实验台 · ${lab.title}`;
-      renderLab(content, lab);
+      renderLab(content, lab, stepParam);
     } else if (unit) {
       title = unit.title;
       renderTopic(content, unit);

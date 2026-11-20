@@ -84,6 +84,31 @@ describe('小念和爸爸的配音', () => {
     vi.useRealTimers();
   });
 
+  it('silences a speaking 3D lab when a film claims the voice channel', () => {
+    localStorage.removeItem('universe-film-voice');
+    vi.spyOn(HTMLMediaElement.prototype, 'play').mockImplementation(() => Promise.resolve());
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => undefined);
+
+    const labHost = document.createElement('div');
+    const filmHost = document.createElement('div');
+    document.body.append(labHost, filmHost);
+
+    renderLab(labHost, findLesson('black-hole-lab')!);
+    labHost.querySelector<HTMLButtonElement>('[data-lab-step="1"]')!.click();
+    expect(labHost.querySelector('.is-speaking')).not.toBeNull();
+
+    const film: Film = { scenes: [scene(0, 6)] };
+    const voice: FilmVoice = { turnCount: 1, lengthOf: () => 2, src: (turn, who) => `/voice/demo/${turn}-${who}.mp3` };
+    const handle = mountFilm(filmHost, film, { voice });
+    filmHost.querySelector<HTMLButtonElement>('.film-play')!.click();
+
+    expect(labHost.querySelector('.is-speaking')).toBeNull();
+    handle.destroy();
+    leaveLab();
+    labHost.remove();
+    filmHost.remove();
+  });
+
   it('reads astronomy notation the way a parent would say it', () => {
     expect(speakable('月球的质量只有地球的约 1/81')).toBe('月球的质量只有地球的约 81分之1');
     expect(speakable('每多 1 米/秒，多运约 10%～15% 的载荷')).toBe('每多 1 米每秒，多运约百分之10到百分之15 的载荷');

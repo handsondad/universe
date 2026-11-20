@@ -171,9 +171,10 @@ export const polarisTrails: SimDef = {
       + txt(mx + 7, my + 12, '天璇', { size: 10.5, anchor: 'start', color: '#ffe066', plain: true })
       + txt(dipper[5][0], dipper[5][1] + 18, '北斗七星', { size: 11, color: '#ffe066', bold: true, plain: true });
 
+    const clipId = `polaris-sky-${Math.round(s.lat)}`;
     return starBackdrop(12, 12, 536, 296, 0)
-      + `<defs><clipPath id="polaris-sky"><rect x="12" y="12" width="536" height="${horizon - 12}" rx="14"/></clipPath></defs>`
-      + `<g clip-path="url(#polaris-sky)">`
+      + `<defs><clipPath id="${clipId}"><rect x="12" y="12" width="536" height="${horizon - 12}" rx="14"/></clipPath></defs>`
+      + `<g clip-path="url(#${clipId})">`
       + `<line x1="${cx}" y1="${horizon}" x2="${cx}" y2="${n(py + 12)}" stroke="#c5b3e6" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.7"/>`
       + sky + `</g>`
       + `<rect x="12" y="${horizon}" width="536" height="${308 - horizon}" rx="14" fill="#23302a"/>`

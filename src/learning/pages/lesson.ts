@@ -27,9 +27,11 @@ export function isLessonOpen(): boolean {
   return Boolean(currentLesson);
 }
 
-function renderTurn(turn: ArticleTurn, index: number, last: boolean, scenes: Set<number>): SafeHtml {
+function renderTurn(turn: ArticleTurn, index: number, last: boolean, scenes: Set<number>, labSlug?: string): SafeHtml {
   const { figure } = turn;
   const wide = figure?.kind === 'sim';
+  const hasFilm = scenes.has(index);
+  const labLink = labSlug && turn.labStep ? turn.labStep : undefined;
   return html`
     <article class="story-turn ${last ? 'is-epiphany' : ''}" id="qa-turn-${index}" data-turn-index="${index}" style="--i:${index}">
       <div class="story-line is-nian">
@@ -43,7 +45,6 @@ function renderTurn(turn: ArticleTurn, index: number, last: boolean, scenes: Set
         <span class="story-avatar">${avatar('dad')}</span>
         <div class="story-bubble ${figure && !wide ? 'has-figure' : ''}">
           <span class="story-name">${characterNames.dad}</span>
-          ${turn.lead ? html`<p class="story-lead">${turn.lead}</p>` : ''}
           <p>${turn.dad}</p>
           ${turn.eq ? html`<code class="qa-eq">${turn.eq}</code>` : ''}
           ${figure && !wide ? renderFigure(figure, index) : ''}
@@ -51,11 +52,10 @@ function renderTurn(turn: ArticleTurn, index: number, last: boolean, scenes: Set
             <ol class="qa-steps" aria-label="图解">
               ${turn.frames.map((frame, i) => html`<li style="--i:${i}"><span aria-hidden="true">${frame.icon}</span><small>${frame.label}</small></li>`)}
             </ol>` : ''}
-          ${turn.see ? html`<p class="story-see"><b>👀 你会看到</b>${turn.see}</p>` : ''}
-          ${turn.myth ? html`<p class="story-myth"><b>⚠️ 别弄错</b>${turn.myth}</p>` : ''}
-          ${scenes.has(index) ? html`
+          ${hasFilm || labLink ? html`
             <div class="story-actions">
-              <button type="button" class="story-action" data-film-turn="${index}" aria-label="播放这一轮的讲解动画">🎬 看动画</button>
+              ${hasFilm ? html`<button type="button" class="story-action" data-film-turn="${index}" aria-label="播放这一轮的讲解动画">🎬 看动画</button>` : ''}
+              ${labLink ? html`<a class="story-action is-lab" href="#lab/${labSlug}?step=${labLink.step}">🔭 ${labLink.label}</a>` : ''}
             </div>` : ''}
         </div>
       </div>
@@ -89,7 +89,7 @@ export function renderLesson(content: HTMLElement, lesson: Lesson): void {
       <div class="qa-main ${film ? 'has-film' : ''}">
         <section class="story-chat" aria-label="小念和爸爸的对话">
           <p class="story-scene">📍 ${article.trigger}</p>
-          ${article.turns.map((turn, i) => renderTurn(turn, i, i === article.turns.length - 1, scenes))}
+          ${article.turns.map((turn, i) => renderTurn(turn, i, i === article.turns.length - 1, scenes, lesson.kind === 'simulation' ? lesson.slug : undefined))}
         </section>
         ${film ? html`<aside class="qa-film" id="qa-stage" aria-label="讲解动画"><div id="film-host"></div></aside>` : ''}
       </div>

@@ -157,6 +157,7 @@ export const labDefs: readonly LabDef[] = [
       { key: 'focus', label: '镜头聚焦', min: 0, max: 8, step: 1, value: 0, labels: ['太阳系全景', '水星', '金星', '地球', '火星', '木星', '土星', '天王星', '海王星'] },
       { key: 'speed', label: '时间倍率', min: 0, max: 4, step: 0.5, value: 1.5, unit: '×' },
       { key: 'orbits', label: '显示轨道线', min: 0, max: 1, step: 1, value: 1, labels: ['隐藏', '显示'] },
+      { key: 'scale', label: '比例尺模式', min: 0, max: 1, step: 1, value: 0, labels: ['教学放大(易看清)', '突出空旷反差'] },
     ],
     steps: [
       {
@@ -165,8 +166,8 @@ export const labDefs: readonly LabDef[] = [
         eq: '太阳占太阳系总质量 99.86%',
         seen: '中心发亮的太阳牵着八条近乎共面的轨道：里面四颗小小岩质行星紧挨着太阳，隔着小行星带外面是四颗庞大的巨行星。',
         concl: '所有行星诞生于同一片旋转的原始星云盘，所以都在几乎同一个平面上同向绕太阳公转。',
-        task: '拖动视角从正上方和侧面分别观察八大行星的轨道平面。',
-        preset: { focus: 0, speed: 1.5, orbits: 1 },
+        task: '拖动视角从正上方和侧面观察轨道平面，再切换「比例尺模式」感受外太阳系有多空旷。',
+        preset: { focus: 0, speed: 1.5, orbits: 1, scale: 0 },
         camera: [0.6, 0.55, 16.5],
       },
       {
@@ -176,7 +177,7 @@ export const labDefs: readonly LabDef[] = [
         seen: '把时间倍率调快，你能清楚看到水星转了好几圈，火星才刚走出一小段。',
         concl: '离太阳越近引力越强，行星必须跑得更快才不会被拉进去，公转周期也短得多。',
         task: '把「时间倍率」调到 3×，数一数地球转 1 圈时水星大概转了几圈（约 4 圈）。',
-        preset: { focus: 3, speed: 3, orbits: 1 },
+        preset: { focus: 3, speed: 3, orbits: 1, scale: 0 },
         camera: [0.5, 0.45, 7.8],
       },
       {
@@ -185,7 +186,7 @@ export const labDefs: readonly LabDef[] = [
         seen: '镜头拉近土星后，能看到一圈宽阔扁平、层次分明的冰环倾斜地环绕着这颗淡金色气态巨行星。',
         concl: '土星环由无数绕土星高速飞行的水冰颗粒组成，宽度惊人但厚度极薄。',
         task: '把「镜头聚焦」切到土星，拖拽画面从侧面和斜上方细看土星光环。',
-        preset: { focus: 6, speed: 1, orbits: 1 },
+        preset: { focus: 6, speed: 1, orbits: 1, scale: 0 },
         camera: [0.8, 0.35, 5.2],
       },
       {
@@ -194,14 +195,15 @@ export const labDefs: readonly LabDef[] = [
         eq: '海王星 5.4 km/s · 165 年绕一圈',
         seen: '聚焦蔚蓝的海王星，它离太阳足足 30 个天文单位，速度只有水星的九分之一，绕一圈要花 165 个地球年！',
         concl: '开普勒第三定律把所有行星串在一起：轨道越远，一年越漫长。',
-        task: '把「镜头聚焦」切到海王星再切回太阳系全景，对比内外轨道半径和速度差异。',
-        preset: { focus: 8, speed: 2, orbits: 1 },
+        task: '把「镜头聚焦」切到海王星再切回全景并打开「突出空旷反差」，对比内外轨道的距离跨度。',
+        preset: { focus: 8, speed: 2, orbits: 1, scale: 0 },
         camera: [0.7, 0.4, 5.8],
       },
     ],
     metric(s) {
+      const vast = (s.scale ?? 0) >= 0.5;
       const info = [
-        { label: '太阳系 8 大行星', value: '30.1 AU', note: '从水星 0.39 AU 到海王星 30.1 AU，越远越慢' },
+        { label: '太阳系 8 大行星', value: '30.1 AU', note: vast ? '空旷反差模式：内四颗岩质行星挤在太阳旁，外圈巨行星隔开辽阔深空' : '从水星 0.39 AU 到海王星 30.1 AU，越远越慢' },
         { label: '水星 · 公转速度', value: '47.4 km/s', note: '距日 0.39 AU · 一年仅 88 天' },
         { label: '金星 · 公转速度', value: '35.0 km/s', note: '距日 0.72 AU · 浓厚 CO₂ 温室 465℃' },
         { label: '地球 · 公转速度', value: '29.8 km/s', note: '距日 1.00 AU · 唯一已知生命家园' },

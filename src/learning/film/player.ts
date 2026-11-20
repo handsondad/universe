@@ -39,13 +39,33 @@ export function saveVoicePreference(on: boolean): void {
   }
 }
 
-/** 同一时间只让一部动画出声：这一页、别的标签页里的播放器一开口，其他的就停下 */
+/** 同一时间只让一部动画或 3D 实验台出声：这一页、别的标签页里的播放器一开口，其他的就停下 */
 const otherTabs = typeof BroadcastChannel === 'undefined' ? undefined : new BroadcastChannel(VOICE_KEY);
 const thisTab = new Set<(speaker: string) => void>();
 let players = 0;
-function claimVoice(speaker: string): void {
-  otherTabs?.postMessage(speaker);
-  for (const listener of thisTab) listener(speaker);
+
+export interface VoiceChannel {
+  claim(): void;
+  close(): void;
+}
+
+export function openVoiceChannel(onInterrupt: () => void): VoiceChannel {
+  const speakerId = `voice-${(players += 1)}`;
+  const onThisTab = (speaker: string): void => {
+    if (speaker !== speakerId) onInterrupt();
+  };
+  thisTab.add(onThisTab);
+  otherTabs?.addEventListener('message', onInterrupt);
+  return {
+    claim() {
+      otherTabs?.postMessage(speakerId);
+      for (const listener of thisTab) listener(speakerId);
+    },
+    close() {
+      thisTab.delete(onThisTab);
+      otherTabs?.removeEventListener('message', onInterrupt);
+    },
+  };
 }
 
 const clock = (seconds: number): string => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
@@ -63,7 +83,6 @@ export function mountFilm(host: HTMLElement, film: Film, options: Options = {}):
   let lines: readonly SpokenLine[] = voiceOn && narrated ? narrated.lines : [];
   let total = totalDuration(active);
   const id = options.id ?? 'film';
-  const playerId = `${id}-${(players += 1)}`;
 
   host.innerHTML = `<div class="film">`
     + `<div class="film-screen"><div class="film-stage" role="button" tabindex="0" aria-label="播放或暂停讲解动画"></div>`
@@ -173,7 +192,7 @@ export function mountFilm(host: HTMLElement, film: Film, options: Options = {}):
     }
     clip = found.line;
     player.currentTime = Math.max(at - found.line.start, 0);
-    claimVoice(playerId);
+    voiceChannel.claim();
     player.play()?.catch((error: unknown) => {
       if (!(error instanceof DOMException) || error.name !== 'NotAllowedError' || destroyed) return;
       pause();
@@ -218,6 +237,7 @@ export function mountFilm(host: HTMLElement, film: Film, options: Options = {}):
     setPlaying(true);
     last = 0;
     caf(frame);
+    if (lines.length) voiceChannel.claim();
     startVoice(now);
     frame = raf(tick);
     draw();
@@ -281,16 +301,12 @@ export function mountFilm(host: HTMLElement, film: Film, options: Options = {}):
   }));
 
   const quietIfSpeaking = (): void => {
-    if (clip && playing) pause();
-  };
-  const onThisTab = (speaker: string): void => {
-    if (speaker !== playerId) quietIfSpeaking();
+    if (playing && lines.length) pause();
   };
   const onHidden = (): void => {
     if (document.hidden) quietIfSpeaking();
   };
-  thisTab.add(onThisTab);
-  otherTabs?.addEventListener('message', quietIfSpeaking);
+  const voiceChannel = openVoiceChannel(quietIfSpeaking);
   document.addEventListener('visibilitychange', onHidden);
 
   const resize = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(entries => {
@@ -328,8 +344,7 @@ export function mountFilm(host: HTMLElement, film: Film, options: Options = {}):
       audio?.removeAttribute('src');
       resize?.disconnect();
       autoplay?.disconnect();
-      thisTab.delete(onThisTab);
-      otherTabs?.removeEventListener('message', quietIfSpeaking);
+      voiceChannel.close();
       document.removeEventListener('visibilitychange', onHidden);
     },
   };

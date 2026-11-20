@@ -32,19 +32,19 @@ describe('universe astronomy collection', () => {
     expect(lessons.every(lesson => units.some(unit => unit.id === lesson.unit))).toBe(true);
   });
 
-  it('fills every topic with 6 researched questions and written stories', () => {
+  it('fills every topic with at least 6 researched questions, each with a written story', () => {
     for (const unit of units) {
       const items = unitLessons(unit.id);
-      expect(items.length, unit.id).toBe(6);
+      expect(items.length, unit.id).toBeGreaterThanOrEqual(6);
     }
-    expect(lessons).toHaveLength(48);
+    expect(lessons.length).toBeGreaterThanOrEqual(48);
     expect(lessons.filter(lesson => !lesson.story).map(lesson => lesson.slug)).toEqual([]);
   });
 
-  it('ships 6 native 3D universe labs', () => {
+  it('ships at least 6 native 3D universe labs', () => {
     const simulations = lessons.filter(lesson => lesson.kind === 'simulation');
-    expect(simulations.length).toBe(6);
-    expect(labs.length).toBe(6);
+    expect(simulations.length).toBeGreaterThanOrEqual(6);
+    expect(labs).toEqual(simulations);
     for (const lesson of simulations) {
       expect(lesson.steps.length).toBeGreaterThanOrEqual(3);
     }
@@ -155,23 +155,40 @@ describe('learning workspace', () => {
     navigate('#topic/earth-moon');
     expect(document.querySelector('.page-top h1')?.textContent).toContain('地球与月球');
     navigate('#q/earth-seasons-lab');
+    expect(document.querySelectorAll('main')).toHaveLength(1);
     expect(document.querySelector('.page-top h1')?.textContent).toBe(story.title);
     expect(document.querySelector('.page-lab')?.getAttribute('href')).toBe('#lab/earth-seasons-lab');
+    const stepLinks = [...document.querySelectorAll<HTMLAnchorElement>('.story-action.is-lab')];
+    expect(stepLinks.length).toBeGreaterThanOrEqual(4);
+    expect(stepLinks.map(link => link.getAttribute('href'))).toContain('#lab/earth-seasons-lab?step=2');
     expect(readProgress().started).toEqual(['earth-seasons-lab']);
   });
 
-  it('gathers all 6 universe labs under #labs and runs each on #lab/<slug>', async () => {
+  it('gathers all universe labs under #labs, supports ?step= deep links, and preserves custom sliders on camera reset', async () => {
     await start();
+    navigate('#lab/earth-seasons-lab?step=2');
+    expect(readProgress().started).toEqual(['earth-seasons-lab']);
+    expect(document.querySelector('.ulab-watch-badge')?.textContent).toContain('第 3 / 5 段');
+
     navigate('#labs');
-    expect(document.querySelectorAll('.lab-card[href^="#lab/"]')).toHaveLength(6);
+    expect(document.querySelectorAll('.lab-card[href^="#lab/"]')).toHaveLength(labs.length);
+    expect(document.querySelector('.lab-card[href="#lab/earth-seasons-lab"]')?.textContent).toContain('⭐ 看过');
     const groups = units.filter(unit => unitLabs(unit.id).length);
     expect(document.querySelectorAll('.labs .qlist-group')).toHaveLength(groups.length);
 
-    navigate('#lab/black-hole-lab');
+    navigate('#lab/solar-system-lab');
     const shell = document.querySelector('#lesson-player');
     expect(shell?.classList.contains('ulab-shell')).toBe(true);
     expect(shell?.classList.contains('is-watch')).toBe(true);
     document.querySelector<HTMLButtonElement>('[data-mode="lab"]')?.click();
     expect(shell?.classList.contains('is-lab')).toBe(true);
+
+    const scaleSlider = document.querySelector<HTMLInputElement>('input[data-ctrl="scale"]')!;
+    scaleSlider.value = '1';
+    scaleSlider.dispatchEvent(new Event('input'));
+    expect(document.querySelector('[data-out="scale"]')?.textContent).toBe('突出空旷反差');
+    document.getElementById('reload-lesson')!.click();
+    expect(scaleSlider.value).toBe('1');
+    expect(document.querySelector('[data-out="scale"]')?.textContent).toBe('突出空旷反差');
   });
 });

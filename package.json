@@ -13,6 +13,12 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint .",
+    "story:todo": "vite-node scripts/story.ts todo",
+    "story:new": "vite-node scripts/story.ts new",
+    "story:check": "vite-node scripts/story.ts check",
+    "story:frames": "vite-node scripts/story.ts frames",
+    "story:sims": "vite-node scripts/story.ts sims",
+    "skills:sync": "node scripts/sync-skills.mjs",
     "voice": "vite-node scripts/voice.ts",
     "check": "npm run lint && npm run test && npm run build"
   },

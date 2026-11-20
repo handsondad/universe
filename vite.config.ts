@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   base: './',
   server: {
-    watch: { ignored: ['**/.story-preview/**'] },
+    watch: { ignored: ['**/.story-preview/**', '**/skills/**', '**/.cursor/**', '**/.agents/**'] },
   },
   build: {
     outDir: 'dist',

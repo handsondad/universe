@@ -5,7 +5,8 @@ import { findLabDef, type LabControl, type LabState } from '../labs';
 import { renderLabCover } from '../labs/covers';
 import type { LabSceneHandle } from '../labs/scenes';
 import { icon } from '../visuals';
-import { readVoicePreference, saveVoicePreference } from '../film/player';
+import { openVoiceChannel, readVoicePreference, saveVoicePreference } from '../film/player';
+import { isStarted, startLesson } from '../store';
 import { labParts, labSpeaker, labVoiceFor, type LabPart } from '../voice';
 import { getElement } from '../../utils/dom';
 import { avatar } from '../../series/avatar';
@@ -46,11 +47,12 @@ function controlText(ctrl: LabControl, val: number): string {
 
 function labCard(lesson: Lesson): SafeHtml {
   const def = findLabDef(lesson.slug);
+  const heard = isStarted(lesson.slug);
   return html`
-    <a class="lab-card" href="#lab/${lesson.slug}">
+    <a class="lab-card ${heard ? 'is-heard' : ''}" href="#lab/${lesson.slug}">
       <div class="lab-card-cover">${renderLabCover(lesson.slug)}</div>
       <strong>${lesson.title}</strong>
-      <small>🔭 3D 宇宙实验 · ${def ? def.steps.length : lesson.steps.length} 段</small>
+      <small>🔭 3D 宇宙实验 · ${def ? def.steps.length : lesson.steps.length} 段${heard ? ' · ⭐ 看过' : ''}</small>
     </a>`;
 }
 
@@ -81,19 +83,20 @@ export function renderLabs(content: HTMLElement): void {
     </div>`);
 }
 
-export function renderLab(content: HTMLElement, lesson: Lesson): void {
+export function renderLab(content: HTMLElement, lesson: Lesson, initialStep = 0): void {
   leaveLab();
   currentLab = lesson;
   const def = findLabDef(lesson.slug);
   if (!def) return;
+  startLesson(lesson);
   const unit = findUnit(lesson.unit);
 
   let mode: LabMode = 'watch';
-  let stepIndex = 0;
+  let stepIndex = Math.max(0, Math.min(def.steps.length - 1, initialStep));
   let playing = false;
   let revealSeen = false;
   let revealConcl = false;
-  const state: LabState = { ...def.steps[0].preset };
+  const state: LabState = Object.fromEntries(def.controls.map(c => [c.key, def.steps[stepIndex].preset[c.key] ?? c.value]));
 
   setHtml(content, html`
     <article class="lab-page" style="--bubble:${unit.color}">
@@ -219,6 +222,7 @@ export function renderLab(content: HTMLElement, lesson: Lesson): void {
       player.onerror = () => finish(false);
       player.src = src;
       markSpeaking(part);
+      voiceChannel.claim();
       let started: Promise<void> | undefined;
       try {
         started = player.play();
@@ -273,18 +277,33 @@ export function renderLab(content: HTMLElement, lesson: Lesson): void {
     else if (voiceOn) void narrateStep(token, false);
   }
 
+  const voiceChannel = openVoiceChannel(() => {
+    if (!speaking && !playing) return;
+    stopAuto();
+    renderStepUI();
+  });
+  const fsBtn = getElement('fullscreen-lesson');
+  const syncFullscreen = (): void => {
+    const on = Boolean(document.fullscreenElement);
+    setHtml(fsBtn, html`${icon('expand')}${on ? '退出全屏' : '全屏'}`);
+    fsBtn.setAttribute('aria-pressed', String(on));
+  };
   const onHidden = (): void => {
     if (!document.hidden) return;
     stopAuto();
     renderStepUI();
   };
   document.addEventListener('visibilitychange', onHidden);
+  document.addEventListener('fullscreenchange', syncFullscreen);
   silenceLab = () => {
     stopAuto();
+    audio?.removeAttribute('src');
+    voiceChannel.close();
     document.removeEventListener('visibilitychange', onHidden);
+    document.removeEventListener('fullscreenchange', syncFullscreen);
   };
 
-  function syncControls(): void {
+  function syncControls(pushToScene = true): void {
     for (const input of inputs) {
       const key = input.dataset.ctrl!;
       const ctrl = def!.controls.find(c => c.key === key);
@@ -298,7 +317,7 @@ export function renderLab(content: HTMLElement, lesson: Lesson): void {
       <span class="ulab-metric-label">${m.label}</span>
       <strong class="ulab-metric-value">${m.value}</strong>
       <small class="ulab-metric-note">${m.note}</small>`);
-    sceneHandle?.setState(state);
+    if (pushToScene) sceneHandle?.setState(state);
   }
 
   function renderStepUI(): void {
@@ -410,7 +429,10 @@ export function renderLab(content: HTMLElement, lesson: Lesson): void {
       .then(({ mountLabScene }) => {
         if (currentLab !== lesson || !stageEl.isConnected) return;
         stageEl.replaceChildren();
-        sceneHandle = mountLabScene(stageEl, lesson.slug, state, def.steps[stepIndex].camera);
+        sceneHandle = mountLabScene(stageEl, lesson.slug, state, def.steps[stepIndex].camera, patch => {
+          Object.assign(state, patch);
+          syncControls(false);
+        });
       })
       .catch(showFallback);
   } else {
@@ -419,13 +441,12 @@ export function renderLab(content: HTMLElement, lesson: Lesson): void {
 
   getElement('reload-lesson').addEventListener('click', () => {
     sceneHandle?.resetCamera();
-    goStep(stepIndex);
   });
-  getElement('fullscreen-lesson').addEventListener('click', () => {
+  fsBtn.addEventListener('click', () => {
     if (document.fullscreenElement) void document.exitFullscreen();
     else void shellEl.requestFullscreen?.();
   });
 
-  goStep(0);
+  goStep(stepIndex);
   setMode('watch');
 }

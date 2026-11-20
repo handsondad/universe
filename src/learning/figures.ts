@@ -92,10 +92,13 @@ function scaleSvg(figure: Extract<Figure, { kind: 'scale' }>): string {
 /** 画在爸爸气泡里的图；`sim` 先画出默认那一帧，由文章页 mountSims 接上滑块和动画 */
 export function renderFigure(figure: Figure, index: number): SafeHtml {
   if (figure.kind === 'image') {
+    const src = figure.src.startsWith('/') && !figure.src.startsWith('//')
+      ? `${import.meta.env.BASE_URL}${figure.src.slice(1)}`
+      : figure.src;
     const credit = figure.credit
       ? html`<small class="fig-credit">📷 ${figure.href ? html`<a href="${figure.href}" target="_blank" rel="noopener noreferrer">${figure.credit}</a>` : figure.credit}</small>`
       : '';
-    return html`<figure class="fig"><img class="fig-img" src="${figure.src}" alt="${figure.alt}" loading="lazy"><figcaption>${figure.caption}${credit}</figcaption></figure>`;
+    return html`<figure class="fig"><img class="fig-img" src="${src}" alt="${figure.alt}" loading="lazy"><figcaption>${figure.caption}${credit}</figcaption></figure>`;
   }
   if (figure.kind === 'sim') return renderSim(figure.sim, figure.caption, `sim-${index}`);
   const svg = figure.kind === 'bars' ? barsSvg(figure) : scaleSvg(figure);

@@ -315,6 +315,11 @@ function loadModel(): Promise<GLTF> {
 
 export async function mountDuo(host: HTMLElement, options: DuoOptions): Promise<DuoStage> {
   const gltf = await loadModel();
+  const sharedGeos = new Set<THREE.BufferGeometry>();
+  gltf.scene.traverse(obj => {
+    const geo = (obj as THREE.Mesh).geometry;
+    if (geo) sharedGeos.add(geo);
+  });
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -504,6 +509,13 @@ export async function mountDuo(host: HTMLElement, options: DuoOptions): Promise<
       seen.disconnect();
       document.removeEventListener('visibilitychange', onVisibility);
       canvas.remove();
+      scene.traverse(obj => {
+        const mesh = obj as THREE.Mesh<THREE.BufferGeometry, THREE.Material | THREE.Material[]>;
+        if (mesh.geometry && !sharedGeos.has(mesh.geometry)) mesh.geometry.dispose();
+        if (!mesh.material) return;
+        const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+        mats.forEach(mat => mat.dispose());
+      });
       renderer.dispose();
       renderer.forceContextLoss();
     },

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { setHtml } from '../src/learning/html';
+import { html, setHtml } from '../src/learning/html';
 import { mountSims, renderSim, simNames } from '../src/learning/sims';
 
 const broken = /NaN|undefined|Infinity/;
@@ -37,5 +37,13 @@ describe('能拖滑块的宇宙互动图', () => {
       for (const input of inputs) expect(input.parentElement!.querySelector('output')!.textContent, where).not.toBe('');
     }
     stop();
+  });
+
+  it('scopes internal SVG <defs> IDs so multiple sims on one page never collide', () => {
+    const host = document.createElement('div');
+    setHtml(host, html`${simNames.map((name, i) => renderSim(name, '说明', `sim-${i}`))}`);
+    const ids = [...host.querySelectorAll('[id]')].map(el => el.id);
+    expect(ids.length).toBeGreaterThan(0);
+    expect(new Set(ids).size).toBe(ids.length);
   });
 });

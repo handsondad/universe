@@ -25,9 +25,6 @@
 .player-toolbar > .mode-switch { gap: 0; flex-wrap: nowrap; padding: 3px; border: 2px solid var(--cv-border); border-radius: 999px; background: var(--cv-surface); }
 .player-toolbar .mode-switch button { padding: 5px 16px; border-radius: 999px; font-size: 14px; color: var(--cv-text-2); transition: background .15s, color .15s; }
 .player-toolbar .mode-switch button[aria-pressed="true"] { background: var(--cv-accent); color: var(--cv-accent-ink); }
-.lesson-player { width: 100%; height: 720px; height: clamp(590px, 76dvh, 850px); border: 2px solid var(--cv-border); border-radius: 0 0 22px 22px; background: var(--cv-bg); overflow: hidden; }
-.lesson-player iframe { display: block; width: 100%; height: 100%; border: 0; }
-.lesson-player:fullscreen { height: 100dvh; border: 0; border-radius: 0; overflow-y: auto; }
 .qa-eq { display: block; margin-top: 12px; padding: 8px 12px; border-radius: 8px; background: var(--cv-accent-soft); font: 600 12.5px/1.65 var(--cv-mono); color: var(--cv-accent); overflow-wrap: anywhere; }
 .story-scene { justify-self: center; max-width: 620px; margin: 0 0 6px; padding: 9px 18px; border-radius: 14px; background: var(--cv-warning-soft); border: 1px solid var(--cv-warning-border); font-size: 13.5px; line-height: 1.75; color: var(--cv-text-2); text-align: center; }
 .story-turn { display: grid; gap: 10px; padding: 10px; margin: -10px; border-radius: 18px; scroll-margin-top: 20px; transition: background .25s, box-shadow .25s; animation: story-pop .45s ease-out both; animation-delay: calc(var(--i, 0) * 70ms); }
@@ -52,6 +49,8 @@
 .story-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .story-action { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 999px; border: 1px solid #ffc58f; background: #fff7ec; color: #a8501a; font-size: 12.5px; font-weight: 650; transition: background .15s, border-color .15s; }
 .story-action:hover { background: #ffedd8; border-color: #ff9f43; }
+.story-action.is-lab { border-color: var(--cv-accent-border); background: var(--cv-accent-soft); color: var(--cv-accent); }
+.story-action.is-lab:hover { background: #e8e0fa; border-color: var(--cv-accent); }
 .film { display: grid; gap: 10px; padding: 10px; border: 1px solid var(--cv-border); border-radius: 18px; background: var(--cv-surface); box-shadow: var(--cv-shadow-sm); }
 .film-screen { position: relative; container-type: inline-size; }
 @container (max-width: 560px) {
@@ -185,6 +184,7 @@ svg.avatar { display: inline-block; width: 1.6em; height: 1.6em; vertical-align:
 /* === 3D 实验台：按主题列出所有实验，每个实验一页 === */
 .lab-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .lab-card { display: grid; align-content: start; gap: 6px; padding: 10px 10px 12px; border: 2px solid color-mix(in srgb, var(--bubble) 40%, white); border-radius: 20px; background: #fff; box-shadow: var(--cv-shadow-sm); transition: transform 250ms cubic-bezier(.34, 1.56, .64, 1), box-shadow .2s; }
+.lab-card.is-heard { background: linear-gradient(135deg, #fff 62%, #fff8db); }
 .lab-card:hover { transform: translateY(-2px); box-shadow: var(--cv-shadow); }
 .lab-card img, .lab-card-art { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; object-fit: cover; background: color-mix(in srgb, var(--bubble) 14%, white); }
 .lab-card-art { display: grid; place-items: center; font-size: 2.6rem; }
@@ -203,12 +203,6 @@ svg.avatar { display: inline-block; width: 1.6em; height: 1.6em; vertical-align:
 .qa-main.has-film { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); column-gap: 28px; align-items: start; max-width: none; }
 .qa-film { position: sticky; top: 14px; min-width: 0; }
 .story-bubble.has-figure { width: min(640px, 90%); max-width: none; }
-.story-lead { font-weight: 700; color: var(--cv-text); }
-.story-see, .story-myth { margin-top: 10px !important; padding: 8px 12px; border-radius: 12px; font-size: 14px; line-height: 1.7; }
-.story-see { background: var(--cv-inset); }
-.story-myth { background: var(--cv-warning-soft); border: 1px solid var(--cv-warning-border); }
-.story-see b, .story-myth b { display: block; font-size: 12.5px; }
-.story-myth b { color: var(--cv-warning); }
 .qa-steps { list-style: none; display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px; padding: 0; margin: 10px 0 0; }
 .qa-steps li { position: relative; flex: 1 1 96px; display: grid; justify-items: center; gap: 2px; padding: 8px 6px; border-radius: 14px; background: #f3f8ff; text-align: center; animation: story-pop .4s both; animation-delay: calc(var(--i, 0) * .25s + .2s); }
 .qa-steps li + li::before { content: '→'; position: absolute; left: -9px; top: 50%; transform: translateY(-50%); font-weight: 700; color: #8db6f0; }
@@ -224,10 +218,6 @@ svg.avatar { display: inline-block; width: 1.6em; height: 1.6em; vertical-align:
 .fig-scale-label { font: 700 13px 'Microsoft YaHei', system-ui, sans-serif; }
 .fig-scale-note { font: 11.5px 'Microsoft YaHei', system-ui, sans-serif; fill: var(--cv-text-2); }
 .fig figcaption { margin-top: 8px; font-size: 13.5px; line-height: 1.6; color: var(--cv-muted); }
-.fig-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; list-style: none; padding: 0; margin: 8px 0 0; font-size: 12.5px; color: var(--cv-text-2); }
-.fig-legend i { display: inline-block; width: 10px; height: 10px; margin-right: 4px; border-radius: 3px; vertical-align: -1px; }
-.fig-scale { display: flex; align-items: center; gap: 8px; margin-top: 8px !important; font-size: 12.5px; color: var(--cv-muted); }
-.fig-scale i { flex: 1; max-width: 220px; height: 9px; border-radius: 999px; background: linear-gradient(90deg, hsl(215, 68%, 82%), hsl(112, 68%, 80%), hsl(10, 68%, 74%)); }
 /* 能拖滑块的互动图：在对话里单独占一整行，比气泡宽 */
 .story-sim { min-width: 0; padding-left: 54px; }
 .fig-sim { margin: 0; padding: 12px 14px 10px; border: 2px solid #cfe0f7; border-radius: 20px; background: #fff; box-shadow: var(--cv-shadow-sm); }
@@ -282,7 +272,6 @@ svg.avatar { display: inline-block; width: 1.6em; height: 1.6em; vertical-align:
   .home-planet .home-bubble span { -webkit-line-clamp: 2; }
   .home-bubble.is-nian { top: 10px; right: 10px; }
   .home-bubble.is-dad { top: 90px; left: 10px; }
-  .home-planet-flat span, .home-planet-flat span:first-child { width: 88px; height: 88px; }
   .home-planet-actions { position: static; justify-content: center; margin-top: 12px; }
   .home-go, .home-next { padding: 7px 14px; font-size: 14px; }
   .home-topics { grid-template-columns: 1fr; }
@@ -291,7 +280,6 @@ svg.avatar { display: inline-block; width: 1.6em; height: 1.6em; vertical-align:
   .page-top { grid-template-columns: 1fr; gap: 8px; }
   .page-lab { justify-self: start; }
   .lab-grid { grid-template-columns: 1fr; }
-  .lab-page .lesson-player { height: 78dvh; }
   .story-avatar { width: 36px; height: 36px; }
   .story-bubble { max-width: 86%; font-size: 15px; padding: 9px 13px 11px; }
   .story-bubble.has-figure { width: calc(100% - 46px); }
@@ -303,7 +291,9 @@ svg.avatar { display: inline-block; width: 1.6em; height: 1.6em; vertical-align:
   .player-toolbar > span { font-size: 12px; }
   .player-toolbar > div { width: 100%; justify-content: space-between; gap: 8px; }
   .player-toolbar > .mode-switch { gap: 0; box-sizing: border-box; }
-  .lesson-player { border-radius: 0 0 18px 18px; }
+  .ulab-shell { border-radius: 0 0 18px 18px; min-height: 0; }
+  .ulab-shell.is-watch .ulab-stage-wrap { grid-template-rows: minmax(300px, 44dvh) auto; }
+  .ulab-stage { min-height: 300px; }
   .player-toolbar .mode-switch button { flex: 1; justify-content: center; }
 }
 

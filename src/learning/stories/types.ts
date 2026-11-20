@@ -1,7 +1,7 @@
 import type { Figure } from '../figures';
 
 /**
- * 小念 × 爸爸：问题驱动的生物讲解（与「身体奇遇记」「化学奇遇记」「物理奇遇记」同一对角色）。
+ * 小念 × 爸爸：问题驱动的天文讲解（与「身体奇遇记」「化学奇遇记」「物理奇遇记」同一对角色）。
  */
 
 export type { CharacterId } from '../../series/characters';

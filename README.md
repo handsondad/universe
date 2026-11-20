@@ -23,6 +23,25 @@ npm install
 npm run dev
 ```
 
+## 扩充内容
+
+想让 AI Agent（或自己）继续加问题、互动图、动画和 3D 实验台：
+
+- **指南**：根目录 [`AGENTS.md`](AGENTS.md) 是总规矩；[`skills/universe-explainer/`](skills/universe-explainer/SKILL.md) 是写一篇新问答的完整 skill（分步清单、[题库](skills/universe-explainer/question-bank.md)、[对话写法](skills/universe-explainer/dialogue.md)、[互动图](skills/universe-explainer/figures.md)、[讲解动画](skills/universe-explainer/film.md)、[来源与许可](skills/universe-explainer/sources.md)、[界面约定](skills/universe-explainer/design.md)、[3D 实验台](skills/universe-explainer/labs.md)）。Cursor 和其他 Agent 从 `.cursor/skills/`、`.agents/skills/` 自动读取同一份。
+- **工具**：
+
+| 命令 | 做什么 |
+|---|---|
+| `npm run story:todo` | 每个主题哪些题已写、几轮、几张图、动画多长、是否待配音 |
+| `npm run story:new -- <slug>` | 按 `curriculum.ts` 生成一篇草稿并登记 |
+| `npm run story:check -- [slug...]` | 按写作规矩逐条检查，指出第几轮 / 第几场的问题 |
+| `npm run story:frames -- <slug>` | 动画联系表（每场三帧）到 `.story-preview/` |
+| `npm run story:sims -- <sim...>` | 互动图在滑块两头的画面联系表 |
+| `npm run voice -- [slug... \| lab \| lab:<slug>]` | 用 edge-tts 配音（需要联网和 `edge-tts`、`ffmpeg`） |
+| `npm run skills:sync` | 改完 `skills/` 后同步到 `.cursor/skills/`、`.agents/skills/` |
+
+给 Agent 的一句话指令示例：「按 universe-explainer skill，从题库里给『地球与月亮』加一题 super-moon，写完配音并跑完验证。」
+
 ## 质量检查
 
 ```bash

@@ -58,7 +58,7 @@ export function simSnapshot(name: SimName, values: State, t?: number): { svg: st
   const def = SIMS[name];
   const state = { ...defaults(def), ...values };
   return {
-    svg: `<svg class="sim-svg" viewBox="0 0 ${W} ${H}">${frame(def, state, t ?? def.still ?? 0)}</svg>`,
+    svg: `<svg class="sim-svg" viewBox="0 0 ${W} ${H}">${frame(def, state, t ?? def.still ?? 0, `snap-${name}`)}</svg>`,
     readout: def.readout(state),
   };
 }
@@ -67,8 +67,14 @@ function valueText(p: SimParam, value: number): string {
   return p.labels ? p.labels[Math.round(value)] ?? '' : `${Number.isInteger(p.step) ? value : n(value)}${p.unit ?? ''}`;
 }
 
-function frame(def: SimDef, s: State, t: number): string {
-  return `<rect width="${W}" height="${H}" rx="12" fill="#fffdf8"/>${def.draw(s, t)}`;
+function scopeSvgIds(markup: string, scope: string): string {
+  return markup
+    .replace(/\bid="([^"]+)"/g, `id="${scope}-$1"`)
+    .replace(/url\(#([^)]+)\)/g, `url(#${scope}-$1)`);
+}
+
+function frame(def: SimDef, s: State, t: number, scope: string): string {
+  return `<rect width="${W}" height="${H}" rx="12" fill="#fffdf8"/>${scopeSvgIds(def.draw(s, t), scope)}`;
 }
 
 export function renderSim(name: SimName, caption: string, id: string): SafeHtml {
@@ -76,7 +82,7 @@ export function renderSim(name: SimName, caption: string, id: string): SafeHtml 
   const state = defaults(def);
   return html`
     <figure class="fig fig-sim" data-sim="${name}" data-id="${id}">
-      <svg class="sim-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${caption}">${raw(frame(def, state, def.still ?? 0))}</svg>
+      <svg class="sim-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${caption}">${raw(frame(def, state, def.still ?? 0, id))}</svg>
       <div class="sim-controls">
         ${def.params.map(p => html`
           <label class="sim-param">
@@ -108,7 +114,8 @@ function mountOne(figure: HTMLElement): () => void {
   let started = 0;
   let last = 0;
 
-  const draw = (t: number): void => setHtml(svg, raw(frame(def, state, t)));
+  const scope = figure.dataset.id || name;
+  const draw = (t: number): void => setHtml(svg, raw(frame(def, state, t, scope)));
   const tick = (now: number): void => {
     raf = 0;
     if (!visible) return;

@@ -47,10 +47,6 @@ export function isStarted(slug: string): boolean {
   return progress.started.includes(slug);
 }
 
-export function isCompleted(slug: string): boolean {
-  return progress.completed.includes(slug);
-}
-
 function markStarted(lesson: Lesson): void {
   if (!isStarted(lesson.slug)) progress.started.push(lesson.slug);
   progress.lastLesson = lesson.slug;
@@ -58,13 +54,5 @@ function markStarted(lesson: Lesson): void {
 
 export function startLesson(lesson: Lesson): void {
   markStarted(lesson);
-  persist();
-}
-
-export function toggleCompleted(lesson: Lesson): void {
-  markStarted(lesson);
-  progress.completed = isCompleted(lesson.slug)
-    ? progress.completed.filter(slug => slug !== lesson.slug)
-    : [...progress.completed, lesson.slug];
   persist();
 }

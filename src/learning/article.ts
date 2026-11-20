@@ -13,16 +13,14 @@ export interface DialogueTurn {
   stepIndex?: number;
 }
 
-/** 文章页里的一轮：小念问一句，爸爸答一段（可带公式、配图、互动图）。 */
+/** 文章页里的一轮：小念问一句，爸爸答一段（可带公式、配图、互动图、3D 实验台跳转）。 */
 export interface ArticleTurn {
   nian: string;
   dad: string;
-  lead?: string;
   eq?: string;
   figure?: Figure;
   frames?: readonly { icon: string; label: string }[];
-  see?: string;
-  myth?: string;
+  labStep?: { readonly step: number; readonly label: string };
 }
 
 /** 每个问题都渲染成同一种「小念 × 爸爸」文章；写了讲解动画的，页面变成左问答、右动画。 */
@@ -52,6 +50,7 @@ export function storyArticle(story: Story): Article {
       eq: turn.eq,
       figure: turn.figure,
       frames: turn.show?.kind === 'steps' ? turn.show.frames : undefined,
+      labStep: turn.show?.kind === 'lab' ? { step: turn.show.step, label: turn.show.label } : undefined,
     })),
   };
 }

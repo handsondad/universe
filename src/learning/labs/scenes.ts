@@ -9,7 +9,7 @@ export interface LabSceneHandle {
 }
 
 interface LabWorld {
-  update(state: LabState, t: number, dt: number): void;
+  update(state: LabState, t: number, dt: number, sync?: (patch: LabState) => void): void;
   focusTarget?(state: LabState): THREE.Vector3;
 }
 
@@ -109,13 +109,21 @@ function buildEarthSeasons(scene: THREE.Scene): LabWorld {
   scene.add(rayLine);
 
   let simMonth = 6;
+  let lastSliderMonth = -1;
   return {
-    update(state, _t, dt) {
-      if (state.speed >= 0.5) {
-        simMonth += dt * 1.4;
-        if (simMonth > 12.5) simMonth -= 12;
-      } else {
+    update(state, t, dt, sync) {
+      if (state.month !== lastSliderMonth) {
         simMonth = state.month;
+        lastSliderMonth = state.month;
+      }
+      if (state.speed >= 0.5 && dt > 0) {
+        simMonth += dt * 1.4;
+        if (simMonth >= 12.5) simMonth -= 12;
+        const rounded = Math.max(1, Math.min(12, Math.round(simMonth)));
+        if (rounded !== lastSliderMonth) {
+          lastSliderMonth = rounded;
+          sync?.({ month: rounded });
+        }
       }
       const angle = ((simMonth - 3) / 12) * Math.PI * 2;
       const ex = Math.cos(angle) * orbitR;
@@ -124,7 +132,7 @@ function buildEarthSeasons(scene: THREE.Scene): LabWorld {
       tiltGroup.rotation.z = -(state.tilt * Math.PI) / 180;
       earth.rotation.y += dt * 1.1;
       rayGeo.setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(ex, 0, ez)]);
-      sunHalo.scale.setScalar(1 + Math.sin(performance.now() * 0.003) * 0.04);
+      sunHalo.scale.setScalar(1 + Math.sin(t * 3) * 0.04);
     },
   };
 }
@@ -201,18 +209,18 @@ function buildSolarSystem(scene: THREE.Scene): LabWorld {
   scene.add(new THREE.PointLight('#fff6df', 3.6, 65, 0.25));
 
   const specs = [
-    { r: 2.0, size: 0.16, speed: 2.2, color: '#adb5bd' },
-    { r: 2.8, size: 0.24, speed: 1.6, color: '#f4c97a' },
-    { r: 3.7, size: 0.26, speed: 1.25, color: '#4dabf7' },
-    { r: 4.6, size: 0.2, speed: 0.95, color: '#e8590c' },
-    { r: 6.4, size: 0.62, speed: 0.55, color: '#e59966' },
-    { r: 8.4, size: 0.52, speed: 0.38, color: '#f2c879', ringed: true },
-    { r: 10.2, size: 0.36, speed: 0.24, color: '#74c0fc' },
-    { r: 11.8, size: 0.35, speed: 0.17, color: '#4c6ef5' },
+    { r: 2.0, wideR: 1.05, size: 0.16, speed: 2.2, color: '#adb5bd' },
+    { r: 2.8, wideR: 1.48, size: 0.24, speed: 1.6, color: '#f4c97a' },
+    { r: 3.7, wideR: 1.95, size: 0.26, speed: 1.25, color: '#4dabf7' },
+    { r: 4.6, wideR: 2.55, size: 0.2, speed: 0.95, color: '#e8590c' },
+    { r: 6.4, wideR: 6.4, size: 0.62, speed: 0.55, color: '#e59966' },
+    { r: 8.4, wideR: 10.4, size: 0.52, speed: 0.38, color: '#f2c879', ringed: true },
+    { r: 10.2, wideR: 14.8, size: 0.36, speed: 0.24, color: '#74c0fc' },
+    { r: 11.8, wideR: 19.2, size: 0.35, speed: 0.17, color: '#4c6ef5' },
   ];
 
   const orbits: THREE.LineLoop[] = [];
-  const bodies: { group: THREE.Group; r: number; speed: number; angle: number }[] = [];
+  const bodies: { group: THREE.Group; r: number; wideR: number; speed: number; angle: number }[] = [];
   specs.forEach((p, i) => {
     const ring = makeOrbitRing(p.r, '#70659e');
     orbits.push(ring);
@@ -232,7 +240,7 @@ function buildSolarSystem(scene: THREE.Scene): LabWorld {
       group.add(satRing);
     }
     scene.add(group);
-    bodies.push({ group, r: p.r, speed: p.speed, angle: i * 1.1 });
+    bodies.push({ group, r: p.r, wideR: p.wideR, speed: p.speed, angle: i * 1.1 });
   });
 
   // 小行星带点云（火星与木星之间）
@@ -252,11 +260,21 @@ function buildSolarSystem(scene: THREE.Scene): LabWorld {
 
   return {
     update(state, _t, dt) {
-      orbits.forEach(o => { o.visible = state.orbits >= 0.5; });
+      const vast = (state.scale ?? 0) >= 0.5;
+      const sunScale = vast ? 0.52 : 1;
+      sun.scale.setScalar(sunScale);
+      halo.scale.setScalar(sunScale);
+      belt.scale.setScalar(vast ? 0.78 : 1);
+      orbits.forEach((o, i) => {
+        o.visible = state.orbits >= 0.5;
+        o.scale.setScalar(vast ? bodies[i].wideR / bodies[i].r : 1);
+      });
       belt.rotation.y += dt * 0.06 * state.speed;
       bodies.forEach(b => {
+        const curR = vast ? b.wideR : b.r;
         b.angle += dt * b.speed * 0.55 * state.speed;
-        b.group.position.set(Math.cos(b.angle) * b.r, 0, Math.sin(b.angle) * b.r);
+        b.group.position.set(Math.cos(b.angle) * curR, 0, Math.sin(b.angle) * curR);
+        b.group.scale.setScalar(vast ? 0.45 : 1);
         b.group.rotation.y += dt * 0.8;
       });
     },
@@ -593,21 +611,37 @@ const BUILDERS: Record<string, (scene: THREE.Scene) => LabWorld> = {
   'black-hole-lab': buildBlackHole,
 };
 
+const BASE_FOV = 44;
+const REF_ASPECT = 1.35;
+const TAN_HALF_BASE = Math.tan(THREE.MathUtils.degToRad(BASE_FOV / 2));
+const MIN_DIST = 3.2;
+const MAX_DIST = 30;
+
+function disposeScene(scene: THREE.Scene): void {
+  scene.traverse(obj => {
+    const mesh = obj as THREE.Mesh<THREE.BufferGeometry, THREE.Material | THREE.Material[]>;
+    mesh.geometry?.dispose();
+    if (!mesh.material) return;
+    const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+    mats.forEach(mat => mat.dispose());
+  });
+}
+
 export function mountLabScene(
   host: HTMLElement,
   slug: string,
   initialState: LabState,
   initialCam: readonly [number, number, number],
+  onAutoState?: (patch: LabState) => void,
 ): LabSceneHandle {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('#1a1633');
   scene.add(new THREE.AmbientLight('#fff4e6', 0.85));
   scene.add(makeStarfield());
 
-  const camera = new THREE.PerspectiveCamera(44, Math.max(1, host.clientWidth) / Math.max(1, host.clientHeight), 0.1, 150);
+  const camera = new THREE.PerspectiveCamera(BASE_FOV, 1, 0.1, 160);
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-  renderer.setSize(Math.max(1, host.clientWidth), Math.max(1, host.clientHeight), false);
   renderer.domElement.className = 'ulab-canvas';
   host.replaceChildren(renderer.domElement);
 
@@ -624,27 +658,45 @@ export function mountLabScene(
   const homeCam = [...initialCam] as [number, number, number];
   const lookAt = new THREE.Vector3();
 
-  // 指针拖拽旋转与滚轮缩放
-  let dragging = false;
-  let px = 0;
-  let py = 0;
+  // 单指旋转 + 双指捏合缩放 + 滚轮缩放
+  const pointers = new Map<number, { x: number; y: number }>();
+  let pinchDist = 0;
+
   const onDown = (e: PointerEvent): void => {
-    dragging = true;
-    px = e.clientX;
-    py = e.clientY;
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
     renderer.domElement.setPointerCapture?.(e.pointerId);
+    if (pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      pinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+    }
   };
   const onMove = (e: PointerEvent): void => {
-    if (!dragging) return;
-    targetAz -= (e.clientX - px) * 0.008;
-    targetEl = Math.max(-1.25, Math.min(1.35, targetEl + (e.clientY - py) * 0.007));
-    px = e.clientX;
-    py = e.clientY;
+    const prev = pointers.get(e.pointerId);
+    if (!prev) return;
+    if (pointers.size === 1) {
+      targetAz -= (e.clientX - prev.x) * 0.008;
+      targetEl = Math.max(-1.25, Math.min(1.35, targetEl + (e.clientY - prev.y) * 0.007));
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      wake();
+    } else if (pointers.size === 2) {
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      const [a, b] = [...pointers.values()];
+      const d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (pinchDist > 8 && d > 8) {
+        targetDist = Math.max(MIN_DIST, Math.min(MAX_DIST, targetDist * (pinchDist / d)));
+        wake();
+      }
+      pinchDist = d;
+    }
   };
-  const onUp = (): void => { dragging = false; };
+  const onUp = (e: PointerEvent): void => {
+    pointers.delete(e.pointerId);
+    if (pointers.size < 2) pinchDist = 0;
+  };
   const onWheel = (e: WheelEvent): void => {
     e.preventDefault();
-    targetDist = Math.max(3.5, Math.min(26, targetDist + e.deltaY * 0.01));
+    targetDist = Math.max(MIN_DIST, Math.min(MAX_DIST, targetDist + e.deltaY * 0.01));
+    wake();
   };
 
   renderer.domElement.addEventListener('pointerdown', onDown);
@@ -656,33 +708,42 @@ export function mountLabScene(
   const resize = (): void => {
     const w = Math.max(1, host.clientWidth);
     const h = Math.max(1, host.clientHeight);
-    camera.aspect = w / h;
+    const aspect = w / h;
+    camera.aspect = aspect;
+    // 窄屏竖屏下放大垂直 FOV，保持横向视场不缩水，避免行星与轨道被左右裁切
+    camera.fov = aspect >= REF_ASPECT
+      ? BASE_FOV
+      : THREE.MathUtils.radToDeg(2 * Math.atan(TAN_HALF_BASE * (REF_ASPECT / Math.max(aspect, 0.52))));
     camera.updateProjectionMatrix();
     renderer.setSize(w, h, false);
+    if (!raf && !disposed) renderFrame(0);
   };
   const ro = typeof ResizeObserver === 'function' ? new ResizeObserver(resize) : null;
   ro?.observe(host);
 
   let raf = 0;
   let disposed = false;
+  let inView = true;
+  let active = true;
   let lastNow = performance.now();
   let elapsed = 0;
   const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
 
-  const tick = (now: number): void => {
-    if (disposed) return;
-    const rawDt = Math.max(0, Math.min(0.05, (now - lastNow) / 1000));
-    lastNow = now;
+  function renderFrame(rawDt: number): void {
     const dt = reduced ? 0 : rawDt;
     elapsed += dt;
+    const blend = rawDt > 0 ? 1 - Math.exp(-8 * rawDt) : 1;
+    az += (targetAz - az) * blend;
+    el += (targetEl - el) * blend;
+    dist += (targetDist - dist) * blend;
 
-    az += (targetAz - az) * 0.12;
-    el += (targetEl - el) * 0.12;
-    dist += (targetDist - dist) * 0.12;
-
-    world.update(state, elapsed, dt);
+    world.update(state, elapsed, dt, patch => {
+      state = { ...state, ...patch };
+      onAutoState?.(patch);
+    });
     const focus = world.focusTarget ? world.focusTarget(state) : new THREE.Vector3(0, 0, 0);
-    lookAt.lerp(focus, 0.12);
+    if (rawDt > 0) lookAt.lerp(focus, blend);
+    else lookAt.copy(focus);
     camera.position.set(
       lookAt.x + Math.cos(el) * Math.sin(az) * dist,
       lookAt.y + Math.sin(el) * dist,
@@ -690,32 +751,82 @@ export function mountLabScene(
     );
     camera.lookAt(lookAt);
     renderer.render(scene, camera);
+  }
+
+  const tick = (now: number): void => {
+    raf = 0;
+    if (disposed || !active) return;
+    const rawDt = Math.max(0, Math.min(0.05, (now - lastNow) / 1000));
+    lastNow = now;
+    renderFrame(rawDt);
     raf = requestAnimationFrame(tick);
   };
-  raf = requestAnimationFrame(tick);
+
+  function syncLoop(): void {
+    active = !disposed && inView && document.visibilityState !== 'hidden';
+    if (active && !raf) {
+      lastNow = performance.now();
+      raf = requestAnimationFrame(tick);
+    } else if (!active && raf) {
+      cancelAnimationFrame(raf);
+      raf = 0;
+    }
+  }
+
+  function wake(): void {
+    if (disposed) return;
+    if (!raf) renderFrame(0);
+    syncLoop();
+  }
+
+  const io = typeof IntersectionObserver === 'function'
+    ? new IntersectionObserver(entries => {
+      inView = entries.some(entry => entry.isIntersecting);
+      syncLoop();
+    })
+    : null;
+  io?.observe(host);
+  document.addEventListener('visibilitychange', syncLoop);
+
+  resize();
+  syncLoop();
 
   return {
-    setState(next) { state = { ...next }; },
+    setState(next) {
+      state = { ...next };
+      wake();
+    },
     setCameraTarget(nextAz, nextEl, nextDist) {
+      const clampedDist = Math.max(MIN_DIST, Math.min(MAX_DIST, nextDist));
+      homeCam[0] = nextAz;
+      homeCam[1] = nextEl;
+      homeCam[2] = clampedDist;
       targetAz = nextAz;
       targetEl = nextEl;
-      targetDist = nextDist;
+      targetDist = clampedDist;
+      wake();
     },
     resetCamera() {
       targetAz = homeCam[0];
       targetEl = homeCam[1];
       targetDist = homeCam[2];
+      wake();
     },
     destroy() {
       disposed = true;
       cancelAnimationFrame(raf);
+      raf = 0;
       ro?.disconnect();
+      io?.disconnect();
+      document.removeEventListener('visibilitychange', syncLoop);
       renderer.domElement.removeEventListener('pointerdown', onDown);
       renderer.domElement.removeEventListener('pointermove', onMove);
       renderer.domElement.removeEventListener('pointerup', onUp);
       renderer.domElement.removeEventListener('pointercancel', onUp);
       renderer.domElement.removeEventListener('wheel', onWheel);
+      disposeScene(scene);
       renderer.dispose();
+      renderer.forceContextLoss();
     },
   };
 }
