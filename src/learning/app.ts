@@ -4,9 +4,13 @@ import { html, setHtml } from './html';
 import { initProgressStore, reloadProgress } from './store';
 import { leaveHome, renderHome } from './pages/home';
 import { isLabOpen, leaveLab, renderLab, renderLabs } from './pages/lab';
-import { isLessonOpen, leaveLesson, renderLesson } from './pages/lesson';
 import { renderTopic } from './pages/topic';
 import { getElement } from '../utils/dom';
+
+/** 问答页带着全部互动图解（simlib），只在打开问答时才加载，首页不用背着它 */
+type LessonPage = typeof import('./pages/lesson');
+let lessonPage: LessonPage | undefined;
+const loadLessonPage = (): Promise<LessonPage> => import('./pages/lesson').then(page => (lessonPage = page));
 
 /** 和「身体奇遇记」「化学奇遇记」「物理奇遇记」一样没有顶栏：首页大标题就是招牌，其余页面都有「← 返回」。 */
 const shell = html`
@@ -19,6 +23,13 @@ const notFound = html`
   <section class="empty-state">
     <h1>这个问题还没写好</h1>
     <p>回到首页，挑一个别的问题吧。</p>
+    <a class="page-back" href="#home">← 回到首页</a>
+  </section>`;
+
+const loadFailed = html`
+  <section class="empty-state">
+    <h1>这一页没加载出来</h1>
+    <p>可能是网络断了一下，刷新页面再试试。</p>
     <a class="page-back" href="#home">← 回到首页</a>
   </section>`;
 
@@ -40,12 +51,15 @@ export function initLearningApp(): void {
     onChange: () => {},
   });
 
+  let routeId = 0;
+
   function route(focus = false): void {
     if (location.hash === '#learning-content') {
       content.focus();
       return;
     }
-    leaveLesson();
+    const thisRoute = (routeId += 1);
+    lessonPage?.leaveLesson();
     leaveLab();
     leaveHome();
     content.replaceChildren();
@@ -74,7 +88,15 @@ export function initLearningApp(): void {
       renderTopic(content, unit);
     } else if (lesson) {
       title = lesson.article.title;
-      renderLesson(content, lesson);
+      loadLessonPage().then(
+        page => {
+          if (thisRoute === routeId) page.renderLesson(content, lesson);
+        },
+        (error: unknown) => {
+          console.error('UniVerse lesson page failed to load.', error);
+          if (thisRoute === routeId) setHtml(content, loadFailed);
+        },
+      );
     } else {
       title = '页面未找到';
       setHtml(content, notFound);
@@ -90,7 +112,12 @@ export function initLearningApp(): void {
 
   window.addEventListener('hashchange', () => route(true));
   window.addEventListener('storage', () => {
-    if (reloadProgress() && !isLessonOpen() && !isLabOpen()) route();
+    if (reloadProgress() && !lessonPage?.isLessonOpen() && !isLabOpen()) route();
   });
   route();
+  // 首页先轻装出场，加载完、空下来再把问答页拉进缓存，点进去就不用等
+  const idle = window.requestIdleCallback ?? ((run: () => void) => window.setTimeout(run, 2000));
+  const prefetch = (): void => void idle(() => void loadLessonPage().catch(() => {}));
+  if (document.readyState === 'complete') prefetch();
+  else window.addEventListener('load', prefetch, { once: true });
 }

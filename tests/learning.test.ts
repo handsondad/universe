@@ -155,6 +155,7 @@ describe('learning workspace', () => {
     navigate('#topic/earth-moon');
     expect(document.querySelector('.page-top h1')?.textContent).toContain('地球与月球');
     navigate('#q/earth-seasons-lab');
+    await vi.dynamicImportSettled();
     expect(document.querySelectorAll('main')).toHaveLength(1);
     expect(document.querySelector('.page-top h1')?.textContent).toBe(story.title);
     expect(document.querySelector('.page-lab')?.getAttribute('href')).toBe('#lab/earth-seasons-lab');
@@ -162,6 +163,12 @@ describe('learning workspace', () => {
     expect(stepLinks.length).toBeGreaterThanOrEqual(4);
     expect(stepLinks.map(link => link.getAttribute('href'))).toContain('#lab/earth-seasons-lab?step=2');
     expect(readProgress().started).toEqual(['earth-seasons-lab']);
+
+    navigate('#q/moon-far-side');
+    navigate('#topic/earth-moon');
+    await vi.dynamicImportSettled();
+    expect(document.querySelector('.qa-page')).toBeNull();
+    expect(document.querySelector('.page-top h1')?.textContent).toContain('地球与月球');
   });
 
   it('gathers all universe labs under #labs, supports ?step= deep links, and preserves custom sliders on camera reset', async () => {

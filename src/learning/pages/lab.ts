@@ -158,6 +158,15 @@ export function renderLab(content: HTMLElement, lesson: Lesson, initialStep = 0)
 
   const voiceSrc = labVoiceFor(lesson.slug);
   const audio = voiceSrc ? Object.assign(new Audio(), { preload: 'auto' }) : undefined;
+  /** 提前把下一句配音拉进缓存，念完一句接下一句不用干等网络 */
+  const upcoming = voiceSrc ? Object.assign(new Audio(), { preload: 'auto' }) : undefined;
+  const preloadAfter = (part: LabPart): void => {
+    const at = labParts.indexOf(part);
+    const next = at < labParts.length - 1
+      ? voiceSrc?.(stepIndex, labParts[at + 1])
+      : stepIndex < def.steps.length - 1 ? voiceSrc?.(stepIndex + 1, labParts[0]) : undefined;
+    if (upcoming && next && upcoming.getAttribute('src') !== next) upcoming.src = next;
+  };
   let voiceOn = readVoicePreference();
   let speaking: LabPart | null = null;
   /** 换段、暂停、关声音都换一个号，旧号的念白和等待自己作废 */
@@ -221,6 +230,7 @@ export function renderLab(content: HTMLElement, lesson: Lesson, initialStep = 0)
       player.onended = () => finish(true);
       player.onerror = () => finish(false);
       player.src = src;
+      preloadAfter(part);
       markSpeaking(part);
       voiceChannel.claim();
       let started: Promise<void> | undefined;
@@ -298,6 +308,7 @@ export function renderLab(content: HTMLElement, lesson: Lesson, initialStep = 0)
   silenceLab = () => {
     stopAuto();
     audio?.removeAttribute('src');
+    upcoming?.removeAttribute('src');
     voiceChannel.close();
     document.removeEventListener('visibilitychange', onHidden);
     document.removeEventListener('fullscreenchange', syncFullscreen);
