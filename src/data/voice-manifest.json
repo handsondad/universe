@@ -1,0 +1,2470 @@
+{
+ "voices": {
+  "nian": {
+   "voice": "zh-CN-YunxiaNeural",
+   "rate": "+0%"
+  },
+  "dad": {
+   "voice": "zh-CN-YunxiNeural",
+   "rate": "-5%"
+  }
+ },
+ "clips": {
+  "andromeda-collision/0-dad": {
+   "hash": "886e08d8bac7",
+   "seconds": 20.59
+  },
+  "andromeda-collision/0-nian": {
+   "hash": "61e59049fccb",
+   "seconds": 9.46
+  },
+  "andromeda-collision/1-dad": {
+   "hash": "2a6f40fac804",
+   "seconds": 22.08
+  },
+  "andromeda-collision/1-nian": {
+   "hash": "6ef5013ba885",
+   "seconds": 7.7
+  },
+  "andromeda-collision/2-dad": {
+   "hash": "4976128073f2",
+   "seconds": 20.26
+  },
+  "andromeda-collision/2-nian": {
+   "hash": "012520a47894",
+   "seconds": 5.57
+  },
+  "andromeda-collision/3-dad": {
+   "hash": "3d26de22b34e",
+   "seconds": 21.17
+  },
+  "andromeda-collision/3-nian": {
+   "hash": "744e25da8bd6",
+   "seconds": 6.46
+  },
+  "andromeda-collision/4-dad": {
+   "hash": "075091ccf182",
+   "seconds": 19.78
+  },
+  "andromeda-collision/4-nian": {
+   "hash": "d81a7f57a374",
+   "seconds": 5.45
+  },
+  "andromeda-collision/5-dad": {
+   "hash": "191a864b851f",
+   "seconds": 15.17
+  },
+  "andromeda-collision/5-nian": {
+   "hash": "3826abb920b0",
+   "seconds": 20.54
+  },
+  "aurora-solar-wind/0-dad": {
+   "hash": "c88a8c2b513e",
+   "seconds": 20.57
+  },
+  "aurora-solar-wind/0-nian": {
+   "hash": "88c0c62a45fa",
+   "seconds": 8.4
+  },
+  "aurora-solar-wind/1-dad": {
+   "hash": "d4c2cff51f62",
+   "seconds": 19.73
+  },
+  "aurora-solar-wind/1-nian": {
+   "hash": "fe29efd7603a",
+   "seconds": 5.33
+  },
+  "aurora-solar-wind/2-dad": {
+   "hash": "7fcc1f8ea6b2",
+   "seconds": 18.07
+  },
+  "aurora-solar-wind/2-nian": {
+   "hash": "ec7c533ac04c",
+   "seconds": 5.06
+  },
+  "aurora-solar-wind/3-dad": {
+   "hash": "d8a4e4a589ec",
+   "seconds": 20.04
+  },
+  "aurora-solar-wind/3-nian": {
+   "hash": "3f997a354f6a",
+   "seconds": 6.84
+  },
+  "aurora-solar-wind/4-dad": {
+   "hash": "9b6cf48f6cf0",
+   "seconds": 19.49
+  },
+  "aurora-solar-wind/4-nian": {
+   "hash": "c7e5749ba015",
+   "seconds": 8.14
+  },
+  "aurora-solar-wind/5-dad": {
+   "hash": "3eec15b31551",
+   "seconds": 18.79
+  },
+  "aurora-solar-wind/5-nian": {
+   "hash": "1b82625a7b14",
+   "seconds": 4.58
+  },
+  "aurora-solar-wind/6-dad": {
+   "hash": "276176b73bca",
+   "seconds": 8.66
+  },
+  "aurora-solar-wind/6-nian": {
+   "hash": "b51c0a357d22",
+   "seconds": 15.67
+  },
+  "big-bang-expansion/0-dad": {
+   "hash": "7fb99e79c669",
+   "seconds": 17.59
+  },
+  "big-bang-expansion/0-nian": {
+   "hash": "98fbf30bb52f",
+   "seconds": 8.04
+  },
+  "big-bang-expansion/1-dad": {
+   "hash": "178cd487e4c2",
+   "seconds": 18.96
+  },
+  "big-bang-expansion/1-nian": {
+   "hash": "007440858a7f",
+   "seconds": 8.14
+  },
+  "big-bang-expansion/2-dad": {
+   "hash": "4691a3fc241d",
+   "seconds": 18.89
+  },
+  "big-bang-expansion/2-nian": {
+   "hash": "d804b4104c60",
+   "seconds": 8.33
+  },
+  "big-bang-expansion/3-dad": {
+   "hash": "16e30ee46ea8",
+   "seconds": 16.58
+  },
+  "big-bang-expansion/3-nian": {
+   "hash": "6d2d073fbab7",
+   "seconds": 7.8
+  },
+  "big-bang-expansion/4-dad": {
+   "hash": "b995d9f1b60c",
+   "seconds": 19.08
+  },
+  "big-bang-expansion/4-nian": {
+   "hash": "a9b8cb10c6ba",
+   "seconds": 7.01
+  },
+  "big-bang-expansion/5-dad": {
+   "hash": "6ee747d5b12d",
+   "seconds": 8.06
+  },
+  "big-bang-expansion/5-nian": {
+   "hash": "f77b83ed8236",
+   "seconds": 14.54
+  },
+  "black-hole-lab/0-dad": {
+   "hash": "bf91f53fea04",
+   "seconds": 17.23
+  },
+  "black-hole-lab/0-nian": {
+   "hash": "8369bbdee234",
+   "seconds": 7.42
+  },
+  "black-hole-lab/1-dad": {
+   "hash": "6ca17d86b010",
+   "seconds": 16.68
+  },
+  "black-hole-lab/1-nian": {
+   "hash": "e585831e9982",
+   "seconds": 7.51
+  },
+  "black-hole-lab/2-dad": {
+   "hash": "fd0d068578f5",
+   "seconds": 17.18
+  },
+  "black-hole-lab/2-nian": {
+   "hash": "5b9e920143ee",
+   "seconds": 8.52
+  },
+  "black-hole-lab/3-dad": {
+   "hash": "7e7067b37b58",
+   "seconds": 21.07
+  },
+  "black-hole-lab/3-nian": {
+   "hash": "1e6ce82bc241",
+   "seconds": 8.18
+  },
+  "black-hole-lab/4-dad": {
+   "hash": "cf1e2d7d4ef8",
+   "seconds": 16.18
+  },
+  "black-hole-lab/4-nian": {
+   "hash": "e1e5ef81723f",
+   "seconds": 5.64
+  },
+  "black-hole-lab/5-dad": {
+   "hash": "f266db4bc5b2",
+   "seconds": 10.3
+  },
+  "black-hole-lab/5-nian": {
+   "hash": "e7295592b831",
+   "seconds": 12.46
+  },
+  "blood-moon/0-dad": {
+   "hash": "12fe8a71a474",
+   "seconds": 19.9
+  },
+  "blood-moon/0-nian": {
+   "hash": "834dad78dcd3",
+   "seconds": 7.99
+  },
+  "blood-moon/1-dad": {
+   "hash": "d4aa4bf2900f",
+   "seconds": 21.34
+  },
+  "blood-moon/1-nian": {
+   "hash": "b67b459931b8",
+   "seconds": 4.63
+  },
+  "blood-moon/2-dad": {
+   "hash": "02b677b38ec2",
+   "seconds": 22.13
+  },
+  "blood-moon/2-nian": {
+   "hash": "0da34c41a01c",
+   "seconds": 6.86
+  },
+  "blood-moon/3-dad": {
+   "hash": "c307691f87a3",
+   "seconds": 18.24
+  },
+  "blood-moon/3-nian": {
+   "hash": "a80ed86093a5",
+   "seconds": 6.26
+  },
+  "blood-moon/4-dad": {
+   "hash": "03fddd9f265a",
+   "seconds": 22.1
+  },
+  "blood-moon/4-nian": {
+   "hash": "ff2dfd884dfe",
+   "seconds": 6.05
+  },
+  "blood-moon/5-dad": {
+   "hash": "d42f591ab748",
+   "seconds": 15.36
+  },
+  "blood-moon/5-nian": {
+   "hash": "2eb21baafe17",
+   "seconds": 7.63
+  },
+  "blood-moon/6-dad": {
+   "hash": "78ada042205f",
+   "seconds": 11.26
+  },
+  "blood-moon/6-nian": {
+   "hash": "2c6359363dee",
+   "seconds": 16.3
+  },
+  "china-space-missions/0-dad": {
+   "hash": "5b6127aa635e",
+   "seconds": 20.18
+  },
+  "china-space-missions/0-nian": {
+   "hash": "1fa3195a0b19",
+   "seconds": 8.42
+  },
+  "china-space-missions/1-dad": {
+   "hash": "e815029d2213",
+   "seconds": 19.08
+  },
+  "china-space-missions/1-nian": {
+   "hash": "354472fd71f3",
+   "seconds": 7.61
+  },
+  "china-space-missions/2-dad": {
+   "hash": "e07a4dc86e71",
+   "seconds": 18
+  },
+  "china-space-missions/2-nian": {
+   "hash": "1dde64bd935c",
+   "seconds": 9.29
+  },
+  "china-space-missions/3-dad": {
+   "hash": "b2494a3bb2f5",
+   "seconds": 19.49
+  },
+  "china-space-missions/3-nian": {
+   "hash": "bd370dbd2a7f",
+   "seconds": 8.88
+  },
+  "china-space-missions/4-dad": {
+   "hash": "7a4cfec42d14",
+   "seconds": 18.02
+  },
+  "china-space-missions/4-nian": {
+   "hash": "8f162a1516ab",
+   "seconds": 7.34
+  },
+  "china-space-missions/5-dad": {
+   "hash": "60588f43b72e",
+   "seconds": 12.12
+  },
+  "china-space-missions/5-nian": {
+   "hash": "0f259b3ac0dc",
+   "seconds": 15.65
+  },
+  "cmb-afterglow/0-dad": {
+   "hash": "aa4791272a56",
+   "seconds": 25.1
+  },
+  "cmb-afterglow/0-nian": {
+   "hash": "7e5290db8953",
+   "seconds": 8.52
+  },
+  "cmb-afterglow/1-dad": {
+   "hash": "20ed1fb66b57",
+   "seconds": 23.9
+  },
+  "cmb-afterglow/1-nian": {
+   "hash": "4bb0028d05aa",
+   "seconds": 7.2
+  },
+  "cmb-afterglow/2-dad": {
+   "hash": "651bf9cfda7f",
+   "seconds": 24.14
+  },
+  "cmb-afterglow/2-nian": {
+   "hash": "4441ec089232",
+   "seconds": 8.28
+  },
+  "cmb-afterglow/3-dad": {
+   "hash": "da6ea2e5c81e",
+   "seconds": 21.91
+  },
+  "cmb-afterglow/3-nian": {
+   "hash": "4a7dd4b1b6f6",
+   "seconds": 6.34
+  },
+  "cmb-afterglow/4-dad": {
+   "hash": "9457a1167854",
+   "seconds": 25.1
+  },
+  "cmb-afterglow/4-nian": {
+   "hash": "f9f60a5cfc27",
+   "seconds": 7.22
+  },
+  "cmb-afterglow/5-dad": {
+   "hash": "6b3aa22aa65d",
+   "seconds": 21.07
+  },
+  "cmb-afterglow/5-nian": {
+   "hash": "1b1e24953056",
+   "seconds": 7.73
+  },
+  "cmb-afterglow/6-dad": {
+   "hash": "568738e383d7",
+   "seconds": 11.59
+  },
+  "cmb-afterglow/6-nian": {
+   "hash": "4cf6eaccd379",
+   "seconds": 17.21
+  },
+  "comet-meteor/0-dad": {
+   "hash": "3f481cc9466e",
+   "seconds": 18.02
+  },
+  "comet-meteor/0-nian": {
+   "hash": "ac25e9ad79a0",
+   "seconds": 7.32
+  },
+  "comet-meteor/1-dad": {
+   "hash": "acf44207d4fe",
+   "seconds": 19.97
+  },
+  "comet-meteor/1-nian": {
+   "hash": "6d6bd75220e6",
+   "seconds": 5.06
+  },
+  "comet-meteor/2-dad": {
+   "hash": "53807211a2ac",
+   "seconds": 19.49
+  },
+  "comet-meteor/2-nian": {
+   "hash": "d256cfb82752",
+   "seconds": 4.75
+  },
+  "comet-meteor/3-dad": {
+   "hash": "d8a011d71854",
+   "seconds": 21.02
+  },
+  "comet-meteor/3-nian": {
+   "hash": "d1e7fd43f4c5",
+   "seconds": 7.1
+  },
+  "comet-meteor/4-dad": {
+   "hash": "bc60cf88dd07",
+   "seconds": 18.26
+  },
+  "comet-meteor/4-nian": {
+   "hash": "48af8cea1c01",
+   "seconds": 5.04
+  },
+  "comet-meteor/5-dad": {
+   "hash": "164d6356df65",
+   "seconds": 23.57
+  },
+  "comet-meteor/5-nian": {
+   "hash": "cb3e31956a6f",
+   "seconds": 7.82
+  },
+  "comet-meteor/6-dad": {
+   "hash": "289296da427d",
+   "seconds": 11.71
+  },
+  "comet-meteor/6-nian": {
+   "hash": "90c424d77ed6",
+   "seconds": 16.61
+  },
+  "constellations-3d/0-dad": {
+   "hash": "0f6c38d79df4",
+   "seconds": 16.75
+  },
+  "constellations-3d/0-nian": {
+   "hash": "568645ca846f",
+   "seconds": 6.98
+  },
+  "constellations-3d/1-dad": {
+   "hash": "6fd2962240e4",
+   "seconds": 20.88
+  },
+  "constellations-3d/1-nian": {
+   "hash": "51f7567af5e6",
+   "seconds": 7.01
+  },
+  "constellations-3d/2-dad": {
+   "hash": "65843ef66813",
+   "seconds": 19.51
+  },
+  "constellations-3d/2-nian": {
+   "hash": "1082db35cbcb",
+   "seconds": 8.59
+  },
+  "constellations-3d/3-dad": {
+   "hash": "d6f74083fc63",
+   "seconds": 19.92
+  },
+  "constellations-3d/3-nian": {
+   "hash": "2bc187c94212",
+   "seconds": 7.44
+  },
+  "constellations-3d/4-dad": {
+   "hash": "0ea607d78d92",
+   "seconds": 18.74
+  },
+  "constellations-3d/4-nian": {
+   "hash": "2bf885edaa65",
+   "seconds": 8.52
+  },
+  "constellations-3d/5-dad": {
+   "hash": "04b0bdc521b8",
+   "seconds": 19.92
+  },
+  "constellations-3d/5-nian": {
+   "hash": "d802c8cff1f0",
+   "seconds": 7.54
+  },
+  "constellations-3d/6-dad": {
+   "hash": "6bc4dab2e9f7",
+   "seconds": 7.85
+  },
+  "constellations-3d/6-nian": {
+   "hash": "4503a5ffe032",
+   "seconds": 18
+  },
+  "dark-energy/0-dad": {
+   "hash": "a0229f8d29aa",
+   "seconds": 22.03
+  },
+  "dark-energy/0-nian": {
+   "hash": "c1f957335627",
+   "seconds": 8.71
+  },
+  "dark-energy/1-dad": {
+   "hash": "30b50af320ed",
+   "seconds": 20.11
+  },
+  "dark-energy/1-nian": {
+   "hash": "f7185389f254",
+   "seconds": 5.88
+  },
+  "dark-energy/2-dad": {
+   "hash": "924801111628",
+   "seconds": 22.75
+  },
+  "dark-energy/2-nian": {
+   "hash": "adceb9c3d085",
+   "seconds": 5.02
+  },
+  "dark-energy/3-dad": {
+   "hash": "ef3accd5a00b",
+   "seconds": 17.88
+  },
+  "dark-energy/3-nian": {
+   "hash": "bf3415c0bc24",
+   "seconds": 6.02
+  },
+  "dark-energy/4-dad": {
+   "hash": "289a2be88d3e",
+   "seconds": 19.63
+  },
+  "dark-energy/4-nian": {
+   "hash": "c91fa4be28a2",
+   "seconds": 6.38
+  },
+  "dark-energy/5-dad": {
+   "hash": "b9fb030805ec",
+   "seconds": 22.63
+  },
+  "dark-energy/5-nian": {
+   "hash": "0de8c7f15e5b",
+   "seconds": 7.06
+  },
+  "dark-energy/6-dad": {
+   "hash": "a8babb1113a0",
+   "seconds": 7.46
+  },
+  "dark-energy/6-nian": {
+   "hash": "2c194eaa3ed7",
+   "seconds": 16.44
+  },
+  "dark-matter-spin/0-dad": {
+   "hash": "e519164aa7e7",
+   "seconds": 18.74
+  },
+  "dark-matter-spin/0-nian": {
+   "hash": "3ed160eb7a80",
+   "seconds": 8.93
+  },
+  "dark-matter-spin/1-dad": {
+   "hash": "cdd85e3cbae4",
+   "seconds": 17.26
+  },
+  "dark-matter-spin/1-nian": {
+   "hash": "c4c6e2cbbba2",
+   "seconds": 7.37
+  },
+  "dark-matter-spin/2-dad": {
+   "hash": "b462805af54c",
+   "seconds": 19.37
+  },
+  "dark-matter-spin/2-nian": {
+   "hash": "47a53759a6bc",
+   "seconds": 7.18
+  },
+  "dark-matter-spin/3-dad": {
+   "hash": "e1536cc6bcd8",
+   "seconds": 16.37
+  },
+  "dark-matter-spin/3-nian": {
+   "hash": "fd13fc03db32",
+   "seconds": 5.9
+  },
+  "dark-matter-spin/4-dad": {
+   "hash": "2f9f37339bd8",
+   "seconds": 18.14
+  },
+  "dark-matter-spin/4-nian": {
+   "hash": "8151843b0709",
+   "seconds": 5.81
+  },
+  "dark-matter-spin/5-dad": {
+   "hash": "a5312fb8ad50",
+   "seconds": 11.57
+  },
+  "dark-matter-spin/5-nian": {
+   "hash": "0c83b99db154",
+   "seconds": 13.75
+  },
+  "dark-night-sky/0-dad": {
+   "hash": "0cc5f3e402c8",
+   "seconds": 18.82
+  },
+  "dark-night-sky/0-nian": {
+   "hash": "6e3f0ac73c79",
+   "seconds": 8.86
+  },
+  "dark-night-sky/1-dad": {
+   "hash": "78fc64bdb23c",
+   "seconds": 22.2
+  },
+  "dark-night-sky/1-nian": {
+   "hash": "e56407bc49c1",
+   "seconds": 8.62
+  },
+  "dark-night-sky/2-dad": {
+   "hash": "a15be983117f",
+   "seconds": 18.5
+  },
+  "dark-night-sky/2-nian": {
+   "hash": "a2142bf193f7",
+   "seconds": 8.33
+  },
+  "dark-night-sky/3-dad": {
+   "hash": "3495d7daaebe",
+   "seconds": 17.69
+  },
+  "dark-night-sky/3-nian": {
+   "hash": "f2ed6968528e",
+   "seconds": 8.59
+  },
+  "dark-night-sky/4-dad": {
+   "hash": "57043bd7a12f",
+   "seconds": 12.62
+  },
+  "dark-night-sky/4-nian": {
+   "hash": "67e38ed0d3ba",
+   "seconds": 7.34
+  },
+  "dark-night-sky/5-dad": {
+   "hash": "4c006b370dc4",
+   "seconds": 10.7
+  },
+  "dark-night-sky/5-nian": {
+   "hash": "1081323df758",
+   "seconds": 17.02
+  },
+  "earth-seasons-lab/0-dad": {
+   "hash": "f06d1562728e",
+   "seconds": 16.58
+  },
+  "earth-seasons-lab/0-nian": {
+   "hash": "e6f6fe314428",
+   "seconds": 5.54
+  },
+  "earth-seasons-lab/1-dad": {
+   "hash": "37e46782e1c0",
+   "seconds": 18.48
+  },
+  "earth-seasons-lab/1-nian": {
+   "hash": "cc1c6e2ddc74",
+   "seconds": 5.35
+  },
+  "earth-seasons-lab/2-dad": {
+   "hash": "6790f4d9045f",
+   "seconds": 18.74
+  },
+  "earth-seasons-lab/2-nian": {
+   "hash": "00ba0587e944",
+   "seconds": 5.66
+  },
+  "earth-seasons-lab/3-dad": {
+   "hash": "bf803ad344c5",
+   "seconds": 18.24
+  },
+  "earth-seasons-lab/3-nian": {
+   "hash": "7ab4c09582cc",
+   "seconds": 9.55
+  },
+  "earth-seasons-lab/4-dad": {
+   "hash": "91be3fb07edb",
+   "seconds": 16.32
+  },
+  "earth-seasons-lab/4-nian": {
+   "hash": "bdcd26e84082",
+   "seconds": 6.24
+  },
+  "earth-seasons-lab/5-dad": {
+   "hash": "8234b0378290",
+   "seconds": 10.37
+  },
+  "earth-seasons-lab/5-nian": {
+   "hash": "3ac7544221c8",
+   "seconds": 11.76
+  },
+  "fast-radio-eye/0-dad": {
+   "hash": "be78a65913cb",
+   "seconds": 20.88
+  },
+  "fast-radio-eye/0-nian": {
+   "hash": "83b0b51ac9a3",
+   "seconds": 7.44
+  },
+  "fast-radio-eye/1-dad": {
+   "hash": "50f45a908bb0",
+   "seconds": 22.56
+  },
+  "fast-radio-eye/1-nian": {
+   "hash": "838ae02ca2c0",
+   "seconds": 6.31
+  },
+  "fast-radio-eye/2-dad": {
+   "hash": "774fccbda5f8",
+   "seconds": 23.06
+  },
+  "fast-radio-eye/2-nian": {
+   "hash": "781c95638e87",
+   "seconds": 5.57
+  },
+  "fast-radio-eye/3-dad": {
+   "hash": "6da824c2f5b5",
+   "seconds": 22.99
+  },
+  "fast-radio-eye/3-nian": {
+   "hash": "c363e5f99406",
+   "seconds": 4.22
+  },
+  "fast-radio-eye/4-dad": {
+   "hash": "4e291b72f25b",
+   "seconds": 22.32
+  },
+  "fast-radio-eye/4-nian": {
+   "hash": "d724f8631245",
+   "seconds": 6.02
+  },
+  "fast-radio-eye/5-dad": {
+   "hash": "c0811fad6f89",
+   "seconds": 22.49
+  },
+  "fast-radio-eye/5-nian": {
+   "hash": "8e216d240d05",
+   "seconds": 6.12
+  },
+  "fast-radio-eye/6-dad": {
+   "hash": "945615e27d9e",
+   "seconds": 14.45
+  },
+  "fast-radio-eye/6-nian": {
+   "hash": "d401ebf36030",
+   "seconds": 13.8
+  },
+  "galaxy-shapes/0-dad": {
+   "hash": "4b7a5b349c4f",
+   "seconds": 21.82
+  },
+  "galaxy-shapes/0-nian": {
+   "hash": "d8304bedae91",
+   "seconds": 7.94
+  },
+  "galaxy-shapes/1-dad": {
+   "hash": "b0b37554ceab",
+   "seconds": 20.23
+  },
+  "galaxy-shapes/1-nian": {
+   "hash": "755532b1cb29",
+   "seconds": 5.28
+  },
+  "galaxy-shapes/2-dad": {
+   "hash": "b72b3342ca7b",
+   "seconds": 16.73
+  },
+  "galaxy-shapes/2-nian": {
+   "hash": "3a5111f728f6",
+   "seconds": 5.45
+  },
+  "galaxy-shapes/3-dad": {
+   "hash": "a90e37e66933",
+   "seconds": 19.1
+  },
+  "galaxy-shapes/3-nian": {
+   "hash": "6a615b8a4da2",
+   "seconds": 5.28
+  },
+  "galaxy-shapes/4-dad": {
+   "hash": "3e3584ca7379",
+   "seconds": 21.62
+  },
+  "galaxy-shapes/4-nian": {
+   "hash": "f23be6d876c4",
+   "seconds": 6.98
+  },
+  "galaxy-shapes/5-dad": {
+   "hash": "fa74adbd298e",
+   "seconds": 17.95
+  },
+  "galaxy-shapes/5-nian": {
+   "hash": "08977bf32982",
+   "seconds": 6.58
+  },
+  "galaxy-shapes/6-dad": {
+   "hash": "a1b456fc50f6",
+   "seconds": 10.56
+  },
+  "galaxy-shapes/6-nian": {
+   "hash": "9ff41236fca4",
+   "seconds": 19.56
+  },
+  "geostationary/0-dad": {
+   "hash": "79cad1f791db",
+   "seconds": 18.98
+  },
+  "geostationary/0-nian": {
+   "hash": "fcd29fdc41b2",
+   "seconds": 7.85
+  },
+  "geostationary/1-dad": {
+   "hash": "69270bc52b13",
+   "seconds": 21.91
+  },
+  "geostationary/1-nian": {
+   "hash": "1418b42fa2b1",
+   "seconds": 6.65
+  },
+  "geostationary/2-dad": {
+   "hash": "ae8c04d4a414",
+   "seconds": 22.1
+  },
+  "geostationary/2-nian": {
+   "hash": "834c6c2fef4a",
+   "seconds": 7.34
+  },
+  "geostationary/3-dad": {
+   "hash": "c95440208cc1",
+   "seconds": 21.94
+  },
+  "geostationary/3-nian": {
+   "hash": "001e4a4fab4b",
+   "seconds": 6.05
+  },
+  "geostationary/4-dad": {
+   "hash": "000978bd482d",
+   "seconds": 22.94
+  },
+  "geostationary/4-nian": {
+   "hash": "a5f16ebbebf6",
+   "seconds": 6.1
+  },
+  "geostationary/5-dad": {
+   "hash": "27373e146580",
+   "seconds": 21.48
+  },
+  "geostationary/5-nian": {
+   "hash": "6724197e99a5",
+   "seconds": 7.58
+  },
+  "geostationary/6-dad": {
+   "hash": "a466efb802c4",
+   "seconds": 9.5
+  },
+  "geostationary/6-nian": {
+   "hash": "b49787cbee6e",
+   "seconds": 18.5
+  },
+  "gravitational-waves/0-dad": {
+   "hash": "1ba2e8086720",
+   "seconds": 20.28
+  },
+  "gravitational-waves/0-nian": {
+   "hash": "fcf0655fdbd5",
+   "seconds": 8.4
+  },
+  "gravitational-waves/1-dad": {
+   "hash": "34668d2da8a1",
+   "seconds": 20.35
+  },
+  "gravitational-waves/1-nian": {
+   "hash": "08c8ee536fd9",
+   "seconds": 6.17
+  },
+  "gravitational-waves/2-dad": {
+   "hash": "a174224d6c4e",
+   "seconds": 25.46
+  },
+  "gravitational-waves/2-nian": {
+   "hash": "a25c85dddbee",
+   "seconds": 5.62
+  },
+  "gravitational-waves/3-dad": {
+   "hash": "8dae2dbdb967",
+   "seconds": 22.39
+  },
+  "gravitational-waves/3-nian": {
+   "hash": "35ff67cf2134",
+   "seconds": 6.12
+  },
+  "gravitational-waves/4-dad": {
+   "hash": "61c93f1387f6",
+   "seconds": 21.89
+  },
+  "gravitational-waves/4-nian": {
+   "hash": "80025291bcf4",
+   "seconds": 6.72
+  },
+  "gravitational-waves/5-dad": {
+   "hash": "ec5a26c11aaa",
+   "seconds": 21.84
+  },
+  "gravitational-waves/5-nian": {
+   "hash": "0fbdc1673c74",
+   "seconds": 7.42
+  },
+  "gravitational-waves/6-dad": {
+   "hash": "989d30ffc8e7",
+   "seconds": 11.42
+  },
+  "gravitational-waves/6-nian": {
+   "hash": "823798fe28ef",
+   "seconds": 19.34
+  },
+  "gravity-assist/0-dad": {
+   "hash": "70392986b23a",
+   "seconds": 15.36
+  },
+  "gravity-assist/0-nian": {
+   "hash": "c5e91de73e24",
+   "seconds": 8.02
+  },
+  "gravity-assist/1-dad": {
+   "hash": "0d361cdaf4c1",
+   "seconds": 20.78
+  },
+  "gravity-assist/1-nian": {
+   "hash": "01235e2aa2a2",
+   "seconds": 8.23
+  },
+  "gravity-assist/2-dad": {
+   "hash": "06b2b2fea94a",
+   "seconds": 14.57
+  },
+  "gravity-assist/2-nian": {
+   "hash": "f1a4a0607d47",
+   "seconds": 7.25
+  },
+  "gravity-assist/3-dad": {
+   "hash": "f2d9cacd7b9a",
+   "seconds": 18.55
+  },
+  "gravity-assist/3-nian": {
+   "hash": "04a2b8325b50",
+   "seconds": 8.3
+  },
+  "gravity-assist/4-dad": {
+   "hash": "eaa3a3140e9f",
+   "seconds": 17.28
+  },
+  "gravity-assist/4-nian": {
+   "hash": "89eb449aa191",
+   "seconds": 7.87
+  },
+  "gravity-assist/5-dad": {
+   "hash": "3025a58b22fe",
+   "seconds": 9.98
+  },
+  "gravity-assist/5-nian": {
+   "hash": "d940fb163e51",
+   "seconds": 13.94
+  },
+  "gravity-orbit-lab/0-dad": {
+   "hash": "5f4250801ce9",
+   "seconds": 16.3
+  },
+  "gravity-orbit-lab/0-nian": {
+   "hash": "4c1f6b669612",
+   "seconds": 8.33
+  },
+  "gravity-orbit-lab/1-dad": {
+   "hash": "64e754b49004",
+   "seconds": 19.15
+  },
+  "gravity-orbit-lab/1-nian": {
+   "hash": "01f2596002e0",
+   "seconds": 7.18
+  },
+  "gravity-orbit-lab/2-dad": {
+   "hash": "6a40bb1a6e9d",
+   "seconds": 16.3
+  },
+  "gravity-orbit-lab/2-nian": {
+   "hash": "567ec0c9aa9e",
+   "seconds": 8.04
+  },
+  "gravity-orbit-lab/3-dad": {
+   "hash": "fd125c51a402",
+   "seconds": 15.62
+  },
+  "gravity-orbit-lab/3-nian": {
+   "hash": "58fa43004ac3",
+   "seconds": 7.7
+  },
+  "gravity-orbit-lab/4-dad": {
+   "hash": "2de961efa439",
+   "seconds": 15.5
+  },
+  "gravity-orbit-lab/4-nian": {
+   "hash": "dc7dbc055693",
+   "seconds": 7.15
+  },
+  "gravity-orbit-lab/5-dad": {
+   "hash": "9e20e27d7f4f",
+   "seconds": 9.82
+  },
+  "gravity-orbit-lab/5-nian": {
+   "hash": "24a5a2a3ea0b",
+   "seconds": 15.17
+  },
+  "habitable-zone/0-dad": {
+   "hash": "330d4554c0f5",
+   "seconds": 18.53
+  },
+  "habitable-zone/0-nian": {
+   "hash": "49c78228089e",
+   "seconds": 8.35
+  },
+  "habitable-zone/1-dad": {
+   "hash": "ea9d300b2fad",
+   "seconds": 18.91
+  },
+  "habitable-zone/1-nian": {
+   "hash": "35f0e8e37190",
+   "seconds": 7.3
+  },
+  "habitable-zone/2-dad": {
+   "hash": "52a020372830",
+   "seconds": 19.78
+  },
+  "habitable-zone/2-nian": {
+   "hash": "19bd6f3de7ba",
+   "seconds": 6.74
+  },
+  "habitable-zone/3-dad": {
+   "hash": "f923db256a2c",
+   "seconds": 16.44
+  },
+  "habitable-zone/3-nian": {
+   "hash": "5f97db518fe3",
+   "seconds": 8.45
+  },
+  "habitable-zone/4-dad": {
+   "hash": "7e791ed0127a",
+   "seconds": 21.48
+  },
+  "habitable-zone/4-nian": {
+   "hash": "4a11b1a64032",
+   "seconds": 5.64
+  },
+  "habitable-zone/5-dad": {
+   "hash": "8606058270f5",
+   "seconds": 10.94
+  },
+  "habitable-zone/5-nian": {
+   "hash": "091dd352fe0e",
+   "seconds": 12.17
+  },
+  "hubble-deep-field/0-dad": {
+   "hash": "110a1536fbc3",
+   "seconds": 18.77
+  },
+  "hubble-deep-field/0-nian": {
+   "hash": "75c040a8b9d3",
+   "seconds": 7.51
+  },
+  "hubble-deep-field/1-dad": {
+   "hash": "27986e36a995",
+   "seconds": 21.98
+  },
+  "hubble-deep-field/1-nian": {
+   "hash": "7a578b16247b",
+   "seconds": 6.86
+  },
+  "hubble-deep-field/2-dad": {
+   "hash": "739dc13e4816",
+   "seconds": 18.96
+  },
+  "hubble-deep-field/2-nian": {
+   "hash": "6c967f1e91f7",
+   "seconds": 6.17
+  },
+  "hubble-deep-field/3-dad": {
+   "hash": "fbe9ea930482",
+   "seconds": 16.2
+  },
+  "hubble-deep-field/3-nian": {
+   "hash": "bdd8fc4e8c33",
+   "seconds": 6.7
+  },
+  "hubble-deep-field/4-dad": {
+   "hash": "4717a93d7b59",
+   "seconds": 22.66
+  },
+  "hubble-deep-field/4-nian": {
+   "hash": "7dbbf3af5f3b",
+   "seconds": 6.34
+  },
+  "hubble-deep-field/5-dad": {
+   "hash": "70a651b8e0d3",
+   "seconds": 12.84
+  },
+  "hubble-deep-field/5-nian": {
+   "hash": "cebd0bc2d3d9",
+   "seconds": 17.69
+  },
+  "jupiter-giant/0-dad": {
+   "hash": "b186cae62ea2",
+   "seconds": 16.44
+  },
+  "jupiter-giant/0-nian": {
+   "hash": "ffc1959d65aa",
+   "seconds": 6.89
+  },
+  "jupiter-giant/1-dad": {
+   "hash": "2847b198e3b2",
+   "seconds": 18.94
+  },
+  "jupiter-giant/1-nian": {
+   "hash": "257bc64250ef",
+   "seconds": 4.08
+  },
+  "jupiter-giant/2-dad": {
+   "hash": "1d1094ef3c22",
+   "seconds": 21.79
+  },
+  "jupiter-giant/2-nian": {
+   "hash": "69af5f77b60b",
+   "seconds": 6.41
+  },
+  "jupiter-giant/3-dad": {
+   "hash": "27a987920edf",
+   "seconds": 16.63
+  },
+  "jupiter-giant/3-nian": {
+   "hash": "5679d1368359",
+   "seconds": 6.02
+  },
+  "jupiter-giant/4-dad": {
+   "hash": "52a09adc63e4",
+   "seconds": 22.75
+  },
+  "jupiter-giant/4-nian": {
+   "hash": "690b47f235dd",
+   "seconds": 5.76
+  },
+  "jupiter-giant/5-dad": {
+   "hash": "657d16d9e647",
+   "seconds": 14.93
+  },
+  "jupiter-giant/5-nian": {
+   "hash": "12e5d70a0d7e",
+   "seconds": 18.24
+  },
+  "light-year-time/0-dad": {
+   "hash": "32dfbd7e00e4",
+   "seconds": 17.86
+  },
+  "light-year-time/0-nian": {
+   "hash": "6991501b48de",
+   "seconds": 6.72
+  },
+  "light-year-time/1-dad": {
+   "hash": "011bfe9a7193",
+   "seconds": 16.39
+  },
+  "light-year-time/1-nian": {
+   "hash": "83460a56f947",
+   "seconds": 8.4
+  },
+  "light-year-time/2-dad": {
+   "hash": "797a0e259440",
+   "seconds": 16.15
+  },
+  "light-year-time/2-nian": {
+   "hash": "fa423e4bceea",
+   "seconds": 9.48
+  },
+  "light-year-time/3-dad": {
+   "hash": "3972cab56374",
+   "seconds": 16.99
+  },
+  "light-year-time/3-nian": {
+   "hash": "6693cd1d6415",
+   "seconds": 8.76
+  },
+  "light-year-time/4-dad": {
+   "hash": "f435b87d8bfc",
+   "seconds": 17.16
+  },
+  "light-year-time/4-nian": {
+   "hash": "f59b4d5b3454",
+   "seconds": 6.79
+  },
+  "light-year-time/5-dad": {
+   "hash": "fb79990a06ed",
+   "seconds": 10.46
+  },
+  "light-year-time/5-nian": {
+   "hash": "ef64fad812f2",
+   "seconds": 11.9
+  },
+  "mars-red/0-dad": {
+   "hash": "5b5726cd5ba6",
+   "seconds": 18.79
+  },
+  "mars-red/0-nian": {
+   "hash": "9f0e14ac20c8",
+   "seconds": 6.5
+  },
+  "mars-red/1-dad": {
+   "hash": "d62a49543579",
+   "seconds": 22.13
+  },
+  "mars-red/1-nian": {
+   "hash": "131b5ddb05a2",
+   "seconds": 6.14
+  },
+  "mars-red/2-dad": {
+   "hash": "ccc7ccfb8633",
+   "seconds": 16.66
+  },
+  "mars-red/2-nian": {
+   "hash": "e7a7a6823a8a",
+   "seconds": 5.88
+  },
+  "mars-red/3-dad": {
+   "hash": "4923a1bb5c23",
+   "seconds": 19.8
+  },
+  "mars-red/3-nian": {
+   "hash": "2b012a92bf39",
+   "seconds": 6.79
+  },
+  "mars-red/4-dad": {
+   "hash": "88893a252cee",
+   "seconds": 16.25
+  },
+  "mars-red/4-nian": {
+   "hash": "60854e8ee921",
+   "seconds": 6
+  },
+  "mars-red/5-dad": {
+   "hash": "3f1e48b427f4",
+   "seconds": 15.65
+  },
+  "mars-red/5-nian": {
+   "hash": "2c3b92fdd2ff",
+   "seconds": 8.64
+  },
+  "mars-red/6-dad": {
+   "hash": "550b5cb874d5",
+   "seconds": 10.15
+  },
+  "mars-red/6-nian": {
+   "hash": "4ec49614543b",
+   "seconds": 18.02
+  },
+  "milky-way-band/0-dad": {
+   "hash": "9fd2620aa188",
+   "seconds": 18.55
+  },
+  "milky-way-band/0-nian": {
+   "hash": "953faf4d06aa",
+   "seconds": 8.28
+  },
+  "milky-way-band/1-dad": {
+   "hash": "f084030862ab",
+   "seconds": 17.4
+  },
+  "milky-way-band/1-nian": {
+   "hash": "9336d9e8aeff",
+   "seconds": 7.61
+  },
+  "milky-way-band/2-dad": {
+   "hash": "5b6c40561eea",
+   "seconds": 19.56
+  },
+  "milky-way-band/2-nian": {
+   "hash": "e5db248761e5",
+   "seconds": 7.58
+  },
+  "milky-way-band/3-dad": {
+   "hash": "e06b84a92abc",
+   "seconds": 16.78
+  },
+  "milky-way-band/3-nian": {
+   "hash": "ec79f5961267",
+   "seconds": 7.1
+  },
+  "milky-way-band/4-dad": {
+   "hash": "8a8069fd5c8d",
+   "seconds": 18.43
+  },
+  "milky-way-band/4-nian": {
+   "hash": "bb677c792bab",
+   "seconds": 9.12
+  },
+  "milky-way-band/5-dad": {
+   "hash": "93c914040ebd",
+   "seconds": 9.96
+  },
+  "milky-way-band/5-nian": {
+   "hash": "be0043596afc",
+   "seconds": 11.74
+  },
+  "moon-eclipse-lab/0-dad": {
+   "hash": "9f5d884585f9",
+   "seconds": 16.78
+  },
+  "moon-eclipse-lab/0-nian": {
+   "hash": "d8e6387fbfc2",
+   "seconds": 5.76
+  },
+  "moon-eclipse-lab/1-dad": {
+   "hash": "2a949b94e841",
+   "seconds": 17.52
+  },
+  "moon-eclipse-lab/1-nian": {
+   "hash": "542e79c46e05",
+   "seconds": 6.7
+  },
+  "moon-eclipse-lab/2-dad": {
+   "hash": "3ab2474cbb9b",
+   "seconds": 16.49
+  },
+  "moon-eclipse-lab/2-nian": {
+   "hash": "46f7bb3ceead",
+   "seconds": 7.27
+  },
+  "moon-eclipse-lab/3-dad": {
+   "hash": "ccf51b46f766",
+   "seconds": 15.91
+  },
+  "moon-eclipse-lab/3-nian": {
+   "hash": "52aa0517d10a",
+   "seconds": 7.08
+  },
+  "moon-eclipse-lab/4-dad": {
+   "hash": "8ccb64e5fdbc",
+   "seconds": 17.33
+  },
+  "moon-eclipse-lab/4-nian": {
+   "hash": "d65b8e899068",
+   "seconds": 7.37
+  },
+  "moon-eclipse-lab/5-dad": {
+   "hash": "016b35f4325d",
+   "seconds": 10.22
+  },
+  "moon-eclipse-lab/5-nian": {
+   "hash": "8c9997e59e74",
+   "seconds": 14.5
+  },
+  "moon-far-side/0-dad": {
+   "hash": "aeea552d16f7",
+   "seconds": 14.38
+  },
+  "moon-far-side/0-nian": {
+   "hash": "5d98b6267e6b",
+   "seconds": 6.43
+  },
+  "moon-far-side/1-dad": {
+   "hash": "dc7d8e789216",
+   "seconds": 16.92
+  },
+  "moon-far-side/1-nian": {
+   "hash": "bd510fafd39f",
+   "seconds": 7.82
+  },
+  "moon-far-side/2-dad": {
+   "hash": "072af2703e9b",
+   "seconds": 18.62
+  },
+  "moon-far-side/2-nian": {
+   "hash": "9160b38f9786",
+   "seconds": 5.88
+  },
+  "moon-far-side/3-dad": {
+   "hash": "3d3e6b1101fd",
+   "seconds": 15.1
+  },
+  "moon-far-side/3-nian": {
+   "hash": "255a92dfb884",
+   "seconds": 6.05
+  },
+  "moon-far-side/4-dad": {
+   "hash": "e6f33cdf3d95",
+   "seconds": 17.69
+  },
+  "moon-far-side/4-nian": {
+   "hash": "794a23928dee",
+   "seconds": 5.88
+  },
+  "moon-far-side/5-dad": {
+   "hash": "399a17a2d418",
+   "seconds": 9.07
+  },
+  "moon-far-side/5-nian": {
+   "hash": "a283f7c7ebb3",
+   "seconds": 11.81
+  },
+  "moon-gravity/0-dad": {
+   "hash": "f29544a93be7",
+   "seconds": 19.37
+  },
+  "moon-gravity/0-nian": {
+   "hash": "f05e2f59c136",
+   "seconds": 9.24
+  },
+  "moon-gravity/1-dad": {
+   "hash": "62b719fbe413",
+   "seconds": 19.49
+  },
+  "moon-gravity/1-nian": {
+   "hash": "6e6d02666f4a",
+   "seconds": 7.01
+  },
+  "moon-gravity/2-dad": {
+   "hash": "0b2a898a14c4",
+   "seconds": 19.73
+  },
+  "moon-gravity/2-nian": {
+   "hash": "c54d6f0840c2",
+   "seconds": 4.44
+  },
+  "moon-gravity/3-dad": {
+   "hash": "70526f0a2ffd",
+   "seconds": 18.98
+  },
+  "moon-gravity/3-nian": {
+   "hash": "d2564b2cd199",
+   "seconds": 7.58
+  },
+  "moon-gravity/4-dad": {
+   "hash": "939bb25447ca",
+   "seconds": 20.11
+  },
+  "moon-gravity/4-nian": {
+   "hash": "26acc38730f7",
+   "seconds": 7.66
+  },
+  "moon-gravity/5-dad": {
+   "hash": "b3a1d4654d77",
+   "seconds": 18.1
+  },
+  "moon-gravity/5-nian": {
+   "hash": "cb81e895d27c",
+   "seconds": 6.41
+  },
+  "moon-gravity/6-dad": {
+   "hash": "ef1be2db15bd",
+   "seconds": 9.43
+  },
+  "moon-gravity/6-nian": {
+   "hash": "0eb7bb51938d",
+   "seconds": 16.99
+  },
+  "moon-illusion/0-dad": {
+   "hash": "16a3b4c8ca98",
+   "seconds": 20.45
+  },
+  "moon-illusion/0-nian": {
+   "hash": "0c92b3cc8ea1",
+   "seconds": 6.62
+  },
+  "moon-illusion/1-dad": {
+   "hash": "30f19f2e7abd",
+   "seconds": 19.61
+  },
+  "moon-illusion/1-nian": {
+   "hash": "725c6369803c",
+   "seconds": 7.37
+  },
+  "moon-illusion/2-dad": {
+   "hash": "b9491d8f1fd3",
+   "seconds": 21.82
+  },
+  "moon-illusion/2-nian": {
+   "hash": "d78da67b9047",
+   "seconds": 5.88
+  },
+  "moon-illusion/3-dad": {
+   "hash": "4a642713e01a",
+   "seconds": 17.09
+  },
+  "moon-illusion/3-nian": {
+   "hash": "b9efa9236c7d",
+   "seconds": 6
+  },
+  "moon-illusion/4-dad": {
+   "hash": "87abf2c52f14",
+   "seconds": 20.33
+  },
+  "moon-illusion/4-nian": {
+   "hash": "2d30bea111cd",
+   "seconds": 5.23
+  },
+  "moon-illusion/5-dad": {
+   "hash": "50ca6efcf6e3",
+   "seconds": 12.41
+  },
+  "moon-illusion/5-nian": {
+   "hash": "193d3be9bf2a",
+   "seconds": 17.62
+  },
+  "ocean-tides/0-dad": {
+   "hash": "2ea52a63619a",
+   "seconds": 18.58
+  },
+  "ocean-tides/0-nian": {
+   "hash": "6d8bfd29530e",
+   "seconds": 8.78
+  },
+  "ocean-tides/1-dad": {
+   "hash": "cbab63a36dbb",
+   "seconds": 15.22
+  },
+  "ocean-tides/1-nian": {
+   "hash": "70b277e5545f",
+   "seconds": 4.8
+  },
+  "ocean-tides/2-dad": {
+   "hash": "ad0e0a9cb5be",
+   "seconds": 15.86
+  },
+  "ocean-tides/2-nian": {
+   "hash": "fc1463308905",
+   "seconds": 7.37
+  },
+  "ocean-tides/3-dad": {
+   "hash": "f3c8362d2f77",
+   "seconds": 16.92
+  },
+  "ocean-tides/3-nian": {
+   "hash": "7739934a8b30",
+   "seconds": 5.28
+  },
+  "ocean-tides/4-dad": {
+   "hash": "6e85d44304d3",
+   "seconds": 16.66
+  },
+  "ocean-tides/4-nian": {
+   "hash": "bf6291c4530f",
+   "seconds": 6.82
+  },
+  "ocean-tides/5-dad": {
+   "hash": "8e8c5277b02f",
+   "seconds": 9.65
+  },
+  "ocean-tides/5-nian": {
+   "hash": "8b997ed460af",
+   "seconds": 14.52
+  },
+  "polaris-still/0-dad": {
+   "hash": "3290f2db4f18",
+   "seconds": 18.34
+  },
+  "polaris-still/0-nian": {
+   "hash": "bf6301eef531",
+   "seconds": 7.08
+  },
+  "polaris-still/1-dad": {
+   "hash": "2bad5b706262",
+   "seconds": 20.81
+  },
+  "polaris-still/1-nian": {
+   "hash": "1dd8251cf2ce",
+   "seconds": 6.05
+  },
+  "polaris-still/2-dad": {
+   "hash": "23701613bf5f",
+   "seconds": 18.82
+  },
+  "polaris-still/2-nian": {
+   "hash": "07562aa8111b",
+   "seconds": 6.12
+  },
+  "polaris-still/3-dad": {
+   "hash": "a7023f6bfc66",
+   "seconds": 18.26
+  },
+  "polaris-still/3-nian": {
+   "hash": "09088e414a40",
+   "seconds": 6.94
+  },
+  "polaris-still/4-dad": {
+   "hash": "748b8e55ac8a",
+   "seconds": 21.74
+  },
+  "polaris-still/4-nian": {
+   "hash": "ca4e30b0732b",
+   "seconds": 6.14
+  },
+  "polaris-still/5-dad": {
+   "hash": "cf186c519e24",
+   "seconds": 18.82
+  },
+  "polaris-still/5-nian": {
+   "hash": "9f3c8c0e9788",
+   "seconds": 6.77
+  },
+  "polaris-still/6-dad": {
+   "hash": "5dc28f99f0f4",
+   "seconds": 8.69
+  },
+  "polaris-still/6-nian": {
+   "hash": "8c3e3e636275",
+   "seconds": 17.18
+  },
+  "pulsar-lighthouse/0-dad": {
+   "hash": "d37b088b3c81",
+   "seconds": 24
+  },
+  "pulsar-lighthouse/0-nian": {
+   "hash": "5fada0cc82cb",
+   "seconds": 7.18
+  },
+  "pulsar-lighthouse/1-dad": {
+   "hash": "d3f93c37d977",
+   "seconds": 19.85
+  },
+  "pulsar-lighthouse/1-nian": {
+   "hash": "f7477a2ab449",
+   "seconds": 6.14
+  },
+  "pulsar-lighthouse/2-dad": {
+   "hash": "56343e23e1e4",
+   "seconds": 20.26
+  },
+  "pulsar-lighthouse/2-nian": {
+   "hash": "efefcb538904",
+   "seconds": 6.24
+  },
+  "pulsar-lighthouse/3-dad": {
+   "hash": "17239dc083b3",
+   "seconds": 19.49
+  },
+  "pulsar-lighthouse/3-nian": {
+   "hash": "14000dde1d39",
+   "seconds": 5.5
+  },
+  "pulsar-lighthouse/4-dad": {
+   "hash": "4ae319efe893",
+   "seconds": 20.81
+  },
+  "pulsar-lighthouse/4-nian": {
+   "hash": "68f0a2b1b6bb",
+   "seconds": 5.54
+  },
+  "pulsar-lighthouse/5-dad": {
+   "hash": "4709230efddd",
+   "seconds": 19.82
+  },
+  "pulsar-lighthouse/5-nian": {
+   "hash": "a01259e1c049",
+   "seconds": 5.71
+  },
+  "pulsar-lighthouse/6-dad": {
+   "hash": "95e9505a53a8",
+   "seconds": 10.25
+  },
+  "pulsar-lighthouse/6-nian": {
+   "hash": "a2428f210d73",
+   "seconds": 15.6
+  },
+  "rocket-vacuum/0-dad": {
+   "hash": "5e50c14452a0",
+   "seconds": 22.27
+  },
+  "rocket-vacuum/0-nian": {
+   "hash": "98ca16f4dde6",
+   "seconds": 9.29
+  },
+  "rocket-vacuum/1-dad": {
+   "hash": "91809f9cdc28",
+   "seconds": 24.29
+  },
+  "rocket-vacuum/1-nian": {
+   "hash": "0d7d7bff46e4",
+   "seconds": 6.07
+  },
+  "rocket-vacuum/2-dad": {
+   "hash": "45e50d23f507",
+   "seconds": 26.04
+  },
+  "rocket-vacuum/2-nian": {
+   "hash": "dd8e6dbb1d8a",
+   "seconds": 6.89
+  },
+  "rocket-vacuum/3-dad": {
+   "hash": "d75359bece3f",
+   "seconds": 23.93
+  },
+  "rocket-vacuum/3-nian": {
+   "hash": "097119cb7dd4",
+   "seconds": 7.63
+  },
+  "rocket-vacuum/4-dad": {
+   "hash": "d0f0c71144ef",
+   "seconds": 21.58
+  },
+  "rocket-vacuum/4-nian": {
+   "hash": "6a0b16308d58",
+   "seconds": 6.29
+  },
+  "rocket-vacuum/5-dad": {
+   "hash": "cd7ca2e01517",
+   "seconds": 22.51
+  },
+  "rocket-vacuum/5-nian": {
+   "hash": "4f8dfad69888",
+   "seconds": 4.18
+  },
+  "rocket-vacuum/6-dad": {
+   "hash": "3487c71c2464",
+   "seconds": 8.64
+  },
+  "rocket-vacuum/6-nian": {
+   "hash": "a09596fb8681",
+   "seconds": 16.08
+  },
+  "round-planets/0-dad": {
+   "hash": "c1e1a1596e09",
+   "seconds": 21.14
+  },
+  "round-planets/0-nian": {
+   "hash": "190c7df472db",
+   "seconds": 7.56
+  },
+  "round-planets/1-dad": {
+   "hash": "21054a5bbddf",
+   "seconds": 19.34
+  },
+  "round-planets/1-nian": {
+   "hash": "b5c294f09653",
+   "seconds": 5.74
+  },
+  "round-planets/2-dad": {
+   "hash": "bbd297007622",
+   "seconds": 17.45
+  },
+  "round-planets/2-nian": {
+   "hash": "0c0eb479e520",
+   "seconds": 7.22
+  },
+  "round-planets/3-dad": {
+   "hash": "448d379b4878",
+   "seconds": 22.22
+  },
+  "round-planets/3-nian": {
+   "hash": "dbd7fc73085f",
+   "seconds": 8.18
+  },
+  "round-planets/4-dad": {
+   "hash": "00b099765fc3",
+   "seconds": 21.36
+  },
+  "round-planets/4-nian": {
+   "hash": "4f1d1df31325",
+   "seconds": 5.98
+  },
+  "round-planets/5-dad": {
+   "hash": "6a3259863cd9",
+   "seconds": 18.24
+  },
+  "round-planets/5-nian": {
+   "hash": "7e5a2bb3c440",
+   "seconds": 6.58
+  },
+  "round-planets/6-dad": {
+   "hash": "f4934d8f3be7",
+   "seconds": 9.17
+  },
+  "round-planets/6-nian": {
+   "hash": "e9bfcca24188",
+   "seconds": 17.21
+  },
+  "saturn-rings/0-dad": {
+   "hash": "5f403311f600",
+   "seconds": 15.7
+  },
+  "saturn-rings/0-nian": {
+   "hash": "b6f02e3e5f71",
+   "seconds": 8.14
+  },
+  "saturn-rings/1-dad": {
+   "hash": "b0871a9738d1",
+   "seconds": 14.42
+  },
+  "saturn-rings/1-nian": {
+   "hash": "4fef5425159c",
+   "seconds": 6.22
+  },
+  "saturn-rings/2-dad": {
+   "hash": "eda1397d6b3c",
+   "seconds": 16.82
+  },
+  "saturn-rings/2-nian": {
+   "hash": "c44d15284ac6",
+   "seconds": 5.74
+  },
+  "saturn-rings/3-dad": {
+   "hash": "a9807824156a",
+   "seconds": 14.95
+  },
+  "saturn-rings/3-nian": {
+   "hash": "e8150b6b2128",
+   "seconds": 7.1
+  },
+  "saturn-rings/4-dad": {
+   "hash": "a64887515b70",
+   "seconds": 16.92
+  },
+  "saturn-rings/4-nian": {
+   "hash": "69f3c337ae34",
+   "seconds": 5.23
+  },
+  "saturn-rings/5-dad": {
+   "hash": "84894ca93cd8",
+   "seconds": 13.51
+  },
+  "saturn-rings/5-nian": {
+   "hash": "b2e1f90351b1",
+   "seconds": 11.78
+  },
+  "solar-system-lab/0-dad": {
+   "hash": "18056967dc68",
+   "seconds": 18.91
+  },
+  "solar-system-lab/0-nian": {
+   "hash": "b46407aceb64",
+   "seconds": 6.43
+  },
+  "solar-system-lab/1-dad": {
+   "hash": "797349c294ca",
+   "seconds": 18.34
+  },
+  "solar-system-lab/1-nian": {
+   "hash": "d44789d86b81",
+   "seconds": 6.79
+  },
+  "solar-system-lab/2-dad": {
+   "hash": "2a222f65f7ee",
+   "seconds": 15.43
+  },
+  "solar-system-lab/2-nian": {
+   "hash": "bf4dcc7c5256",
+   "seconds": 8.02
+  },
+  "solar-system-lab/3-dad": {
+   "hash": "2fdb07cbb66c",
+   "seconds": 20.09
+  },
+  "solar-system-lab/3-nian": {
+   "hash": "2e1101d9317e",
+   "seconds": 9.34
+  },
+  "solar-system-lab/4-dad": {
+   "hash": "67f979b9b25d",
+   "seconds": 17.88
+  },
+  "solar-system-lab/4-nian": {
+   "hash": "b2fc4620c92f",
+   "seconds": 6.14
+  },
+  "solar-system-lab/5-dad": {
+   "hash": "95c0c6b29b32",
+   "seconds": 10.61
+  },
+  "solar-system-lab/5-nian": {
+   "hash": "91fe41aa54b5",
+   "seconds": 14.66
+  },
+  "space-telescope/0-dad": {
+   "hash": "ed634c8c8895",
+   "seconds": 15
+  },
+  "space-telescope/0-nian": {
+   "hash": "d9c46209e8c7",
+   "seconds": 8.52
+  },
+  "space-telescope/1-dad": {
+   "hash": "332369577632",
+   "seconds": 20.16
+  },
+  "space-telescope/1-nian": {
+   "hash": "ec6d32ccf28c",
+   "seconds": 7.39
+  },
+  "space-telescope/2-dad": {
+   "hash": "9bb709e948ea",
+   "seconds": 18.7
+  },
+  "space-telescope/2-nian": {
+   "hash": "d5cf79705ea2",
+   "seconds": 7.54
+  },
+  "space-telescope/3-dad": {
+   "hash": "d8b9126c27c7",
+   "seconds": 21.65
+  },
+  "space-telescope/3-nian": {
+   "hash": "a6214c5cf1d4",
+   "seconds": 8.33
+  },
+  "space-telescope/4-dad": {
+   "hash": "c3c1ef49684a",
+   "seconds": 18.19
+  },
+  "space-telescope/4-nian": {
+   "hash": "b82f15750f1e",
+   "seconds": 6.58
+  },
+  "space-telescope/5-dad": {
+   "hash": "1746d3a214a0",
+   "seconds": 11.33
+  },
+  "space-telescope/5-nian": {
+   "hash": "6ec6065732ef",
+   "seconds": 14.3
+  },
+  "spaghettification/0-dad": {
+   "hash": "2716f318f296",
+   "seconds": 19.06
+  },
+  "spaghettification/0-nian": {
+   "hash": "b830b20a3242",
+   "seconds": 7.61
+  },
+  "spaghettification/1-dad": {
+   "hash": "5c25300ce97c",
+   "seconds": 17.86
+  },
+  "spaghettification/1-nian": {
+   "hash": "489a07777717",
+   "seconds": 8.3
+  },
+  "spaghettification/2-dad": {
+   "hash": "35e42aa3bb3a",
+   "seconds": 15.79
+  },
+  "spaghettification/2-nian": {
+   "hash": "906c3e66dd9e",
+   "seconds": 7.27
+  },
+  "spaghettification/3-dad": {
+   "hash": "1dc4a0cdb218",
+   "seconds": 19.85
+  },
+  "spaghettification/3-nian": {
+   "hash": "e626b1511fa8",
+   "seconds": 5.45
+  },
+  "spaghettification/4-dad": {
+   "hash": "3ffd6cdf09aa",
+   "seconds": 16.37
+  },
+  "spaghettification/4-nian": {
+   "hash": "f6fc84dc18b4",
+   "seconds": 9.02
+  },
+  "spaghettification/5-dad": {
+   "hash": "506edfc275c3",
+   "seconds": 9.58
+  },
+  "spaghettification/5-nian": {
+   "hash": "85d6b543aeba",
+   "seconds": 13.49
+  },
+  "star-colors/0-dad": {
+   "hash": "fe7fc3103322",
+   "seconds": 14.59
+  },
+  "star-colors/0-nian": {
+   "hash": "fa1d6d657f2b",
+   "seconds": 8.57
+  },
+  "star-colors/1-dad": {
+   "hash": "5a945ef37ba3",
+   "seconds": 19.44
+  },
+  "star-colors/1-nian": {
+   "hash": "08ec0eac4ae8",
+   "seconds": 6.53
+  },
+  "star-colors/2-dad": {
+   "hash": "9312efab2d4f",
+   "seconds": 18.55
+  },
+  "star-colors/2-nian": {
+   "hash": "e0fff0e73c84",
+   "seconds": 7.34
+  },
+  "star-colors/3-dad": {
+   "hash": "27f12bd9bc9c",
+   "seconds": 18.12
+  },
+  "star-colors/3-nian": {
+   "hash": "8ad383832227",
+   "seconds": 7.1
+  },
+  "star-colors/4-dad": {
+   "hash": "a7fe6ba70b25",
+   "seconds": 17.11
+  },
+  "star-colors/4-nian": {
+   "hash": "1462a0083181",
+   "seconds": 8.35
+  },
+  "star-colors/5-dad": {
+   "hash": "78c834879d87",
+   "seconds": 10.8
+  },
+  "star-colors/5-nian": {
+   "hash": "6b2d68e996d3",
+   "seconds": 13.06
+  },
+  "star-lifecycle-lab/0-dad": {
+   "hash": "87d8208fed96",
+   "seconds": 16.44
+  },
+  "star-lifecycle-lab/0-nian": {
+   "hash": "d13c1a284962",
+   "seconds": 7.44
+  },
+  "star-lifecycle-lab/1-dad": {
+   "hash": "b3b9161c8d59",
+   "seconds": 18.19
+  },
+  "star-lifecycle-lab/1-nian": {
+   "hash": "81e5199252a6",
+   "seconds": 7.97
+  },
+  "star-lifecycle-lab/2-dad": {
+   "hash": "b99132597a5c",
+   "seconds": 17.81
+  },
+  "star-lifecycle-lab/2-nian": {
+   "hash": "b67109fec2f3",
+   "seconds": 7.27
+  },
+  "star-lifecycle-lab/3-dad": {
+   "hash": "6dfa20339a68",
+   "seconds": 16.2
+  },
+  "star-lifecycle-lab/3-nian": {
+   "hash": "2a3345c8d8a9",
+   "seconds": 6.19
+  },
+  "star-lifecycle-lab/4-dad": {
+   "hash": "db05848dedb3",
+   "seconds": 17.28
+  },
+  "star-lifecycle-lab/4-nian": {
+   "hash": "ac34d4138ed8",
+   "seconds": 3.7
+  },
+  "star-lifecycle-lab/5-dad": {
+   "hash": "757034bf4bdd",
+   "seconds": 13.32
+  },
+  "star-lifecycle-lab/5-nian": {
+   "hash": "b523ef57717a",
+   "seconds": 16.99
+  },
+  "stardust-elements/0-dad": {
+   "hash": "d0af3e33e830",
+   "seconds": 17.71
+  },
+  "stardust-elements/0-nian": {
+   "hash": "a019ee8e6023",
+   "seconds": 8.69
+  },
+  "stardust-elements/1-dad": {
+   "hash": "7e9f0d0341a2",
+   "seconds": 17.95
+  },
+  "stardust-elements/1-nian": {
+   "hash": "a384ecc51de8",
+   "seconds": 8.95
+  },
+  "stardust-elements/2-dad": {
+   "hash": "32366d713cb9",
+   "seconds": 18.05
+  },
+  "stardust-elements/2-nian": {
+   "hash": "db026f238edf",
+   "seconds": 9
+  },
+  "stardust-elements/3-dad": {
+   "hash": "8154cef9cb35",
+   "seconds": 18.24
+  },
+  "stardust-elements/3-nian": {
+   "hash": "eda8b56477ad",
+   "seconds": 6.58
+  },
+  "stardust-elements/4-dad": {
+   "hash": "7bf2643b6e89",
+   "seconds": 17.93
+  },
+  "stardust-elements/4-nian": {
+   "hash": "6a62a121ff11",
+   "seconds": 9.1
+  },
+  "stardust-elements/5-dad": {
+   "hash": "e863f871e829",
+   "seconds": 10.51
+  },
+  "stardust-elements/5-nian": {
+   "hash": "801d51a8ddd0",
+   "seconds": 14.86
+  },
+  "sun-fusion/0-dad": {
+   "hash": "ec5ef993ea53",
+   "seconds": 17.21
+  },
+  "sun-fusion/0-nian": {
+   "hash": "53b69a9a195d",
+   "seconds": 7.97
+  },
+  "sun-fusion/1-dad": {
+   "hash": "3882a0bb92c8",
+   "seconds": 17.26
+  },
+  "sun-fusion/1-nian": {
+   "hash": "0017ad5109de",
+   "seconds": 6.14
+  },
+  "sun-fusion/2-dad": {
+   "hash": "52efbc416f06",
+   "seconds": 17.06
+  },
+  "sun-fusion/2-nian": {
+   "hash": "854911bd3eab",
+   "seconds": 6.36
+  },
+  "sun-fusion/3-dad": {
+   "hash": "281e68d95a8e",
+   "seconds": 18.82
+  },
+  "sun-fusion/3-nian": {
+   "hash": "29beef6ab429",
+   "seconds": 5.3
+  },
+  "sun-fusion/4-dad": {
+   "hash": "66ed2e8d0bbf",
+   "seconds": 17.88
+  },
+  "sun-fusion/4-nian": {
+   "hash": "de6f3a6033f2",
+   "seconds": 6.43
+  },
+  "sun-fusion/5-dad": {
+   "hash": "c7e82f417a4d",
+   "seconds": 11.04
+  },
+  "sun-fusion/5-nian": {
+   "hash": "24ee6b54895a",
+   "seconds": 13.92
+  },
+  "time-dilation-gps/0-dad": {
+   "hash": "16c118bd3287",
+   "seconds": 15.31
+  },
+  "time-dilation-gps/0-nian": {
+   "hash": "41d38e1fa70f",
+   "seconds": 8.3
+  },
+  "time-dilation-gps/1-dad": {
+   "hash": "fd7fd03584d0",
+   "seconds": 18.72
+  },
+  "time-dilation-gps/1-nian": {
+   "hash": "64f29fcc1d5c",
+   "seconds": 8.98
+  },
+  "time-dilation-gps/2-dad": {
+   "hash": "5231f2f7ca41",
+   "seconds": 14.88
+  },
+  "time-dilation-gps/2-nian": {
+   "hash": "a18aaa194309",
+   "seconds": 7.49
+  },
+  "time-dilation-gps/3-dad": {
+   "hash": "050697b287ff",
+   "seconds": 19.44
+  },
+  "time-dilation-gps/3-nian": {
+   "hash": "419b7a38bf43",
+   "seconds": 8.06
+  },
+  "time-dilation-gps/4-dad": {
+   "hash": "012f1670e2f0",
+   "seconds": 19.58
+  },
+  "time-dilation-gps/4-nian": {
+   "hash": "9749b43e05ed",
+   "seconds": 7.49
+  },
+  "time-dilation-gps/5-dad": {
+   "hash": "98df592e3372",
+   "seconds": 9.7
+  },
+  "time-dilation-gps/5-nian": {
+   "hash": "22879770a5fa",
+   "seconds": 14.33
+  },
+  "time-zones/0-dad": {
+   "hash": "308a251347a0",
+   "seconds": 19.03
+  },
+  "time-zones/0-nian": {
+   "hash": "918fe4a12229",
+   "seconds": 7.75
+  },
+  "time-zones/1-dad": {
+   "hash": "292368cbcbb4",
+   "seconds": 19.97
+  },
+  "time-zones/1-nian": {
+   "hash": "303248da7e09",
+   "seconds": 4.73
+  },
+  "time-zones/2-dad": {
+   "hash": "7e32e950d9a1",
+   "seconds": 18.43
+  },
+  "time-zones/2-nian": {
+   "hash": "43bcc4f2bf8a",
+   "seconds": 4.92
+  },
+  "time-zones/3-dad": {
+   "hash": "e0da1de377af",
+   "seconds": 21.6
+  },
+  "time-zones/3-nian": {
+   "hash": "eca182c9c6b4",
+   "seconds": 5.5
+  },
+  "time-zones/4-dad": {
+   "hash": "33ca35c7b33d",
+   "seconds": 18.26
+  },
+  "time-zones/4-nian": {
+   "hash": "a9c608ff3f00",
+   "seconds": 5.93
+  },
+  "time-zones/5-dad": {
+   "hash": "1ce2407c0805",
+   "seconds": 10.01
+  },
+  "time-zones/5-nian": {
+   "hash": "27ec839b4f67",
+   "seconds": 19.18
+  },
+  "universe-edge/0-dad": {
+   "hash": "d719551420e6",
+   "seconds": 21.91
+  },
+  "universe-edge/0-nian": {
+   "hash": "f18e6d3ab47c",
+   "seconds": 5.9
+  },
+  "universe-edge/1-dad": {
+   "hash": "143d4e753ce8",
+   "seconds": 24.79
+  },
+  "universe-edge/1-nian": {
+   "hash": "d1b36db44f42",
+   "seconds": 7.34
+  },
+  "universe-edge/2-dad": {
+   "hash": "6e0974552e6d",
+   "seconds": 22.3
+  },
+  "universe-edge/2-nian": {
+   "hash": "0a70ed8d5e53",
+   "seconds": 6.24
+  },
+  "universe-edge/3-dad": {
+   "hash": "689d9d432d4e",
+   "seconds": 23.57
+  },
+  "universe-edge/3-nian": {
+   "hash": "92e081b89229",
+   "seconds": 7.13
+  },
+  "universe-edge/4-dad": {
+   "hash": "c0e2707e1a58",
+   "seconds": 21.34
+  },
+  "universe-edge/4-nian": {
+   "hash": "d1b6d17f1d69",
+   "seconds": 7.18
+  },
+  "universe-edge/5-dad": {
+   "hash": "d8fd22ab1837",
+   "seconds": 21.07
+  },
+  "universe-edge/5-nian": {
+   "hash": "038b56136554",
+   "seconds": 5.45
+  },
+  "universe-edge/6-dad": {
+   "hash": "ac8089a1c943",
+   "seconds": 8.93
+  },
+  "universe-edge/6-nian": {
+   "hash": "9e1ec1ac6720",
+   "seconds": 19.13
+  },
+  "venus-hottest/0-dad": {
+   "hash": "09c971d86c83",
+   "seconds": 17.54
+  },
+  "venus-hottest/0-nian": {
+   "hash": "b497a51090dc",
+   "seconds": 6.58
+  },
+  "venus-hottest/1-dad": {
+   "hash": "1cf07e722a37",
+   "seconds": 18.6
+  },
+  "venus-hottest/1-nian": {
+   "hash": "75702e49a67f",
+   "seconds": 6.62
+  },
+  "venus-hottest/2-dad": {
+   "hash": "978a38af31ec",
+   "seconds": 15.7
+  },
+  "venus-hottest/2-nian": {
+   "hash": "b45587476d85",
+   "seconds": 5.59
+  },
+  "venus-hottest/3-dad": {
+   "hash": "6244aab5b0bd",
+   "seconds": 16.92
+  },
+  "venus-hottest/3-nian": {
+   "hash": "fff93c3ccff9",
+   "seconds": 6.86
+  },
+  "venus-hottest/4-dad": {
+   "hash": "2ba3dbe3b974",
+   "seconds": 14.86
+  },
+  "venus-hottest/4-nian": {
+   "hash": "8a41aee900fe",
+   "seconds": 7.8
+  },
+  "venus-hottest/5-dad": {
+   "hash": "756c978c138a",
+   "seconds": 9.96
+  },
+  "venus-hottest/5-nian": {
+   "hash": "1bd2a065c295",
+   "seconds": 13.03
+  },
+  "wenchang-launch/0-dad": {
+   "hash": "a516c162ebb8",
+   "seconds": 20.4
+  },
+  "wenchang-launch/0-nian": {
+   "hash": "2cf7de218036",
+   "seconds": 9.58
+  },
+  "wenchang-launch/1-dad": {
+   "hash": "c66cc61fa662",
+   "seconds": 21.07
+  },
+  "wenchang-launch/1-nian": {
+   "hash": "a5d8a95915ff",
+   "seconds": 5.47
+  },
+  "wenchang-launch/2-dad": {
+   "hash": "1066ee3ad05d",
+   "seconds": 26.88
+  },
+  "wenchang-launch/2-nian": {
+   "hash": "c5699382dde1",
+   "seconds": 5.95
+  },
+  "wenchang-launch/3-dad": {
+   "hash": "495d1b7e7f8a",
+   "seconds": 24
+  },
+  "wenchang-launch/3-nian": {
+   "hash": "f481dd194dad",
+   "seconds": 6.41
+  },
+  "wenchang-launch/4-dad": {
+   "hash": "b37d67a4b637",
+   "seconds": 22.97
+  },
+  "wenchang-launch/4-nian": {
+   "hash": "db1c9ae8924f",
+   "seconds": 5.45
+  },
+  "wenchang-launch/5-dad": {
+   "hash": "7b9b6a66a428",
+   "seconds": 21.62
+  },
+  "wenchang-launch/5-nian": {
+   "hash": "f708a16ed2da",
+   "seconds": 5.86
+  },
+  "wenchang-launch/6-dad": {
+   "hash": "64ce01e790f0",
+   "seconds": 11.26
+  },
+  "wenchang-launch/6-nian": {
+   "hash": "f7c31d5617eb",
+   "seconds": 17.4
+  },
+  "wormhole-travel/0-dad": {
+   "hash": "162bdfbd4afa",
+   "seconds": 21.98
+  },
+  "wormhole-travel/0-nian": {
+   "hash": "7a1a4cd5afcc",
+   "seconds": 7.94
+  },
+  "wormhole-travel/1-dad": {
+   "hash": "e7d1a85e2106",
+   "seconds": 18.34
+  },
+  "wormhole-travel/1-nian": {
+   "hash": "fbdabe021a70",
+   "seconds": 4.87
+  },
+  "wormhole-travel/2-dad": {
+   "hash": "0c59b6641cfe",
+   "seconds": 19.66
+  },
+  "wormhole-travel/2-nian": {
+   "hash": "f845f72a023e",
+   "seconds": 7.22
+  },
+  "wormhole-travel/3-dad": {
+   "hash": "3d1b5c0ef10d",
+   "seconds": 19.66
+  },
+  "wormhole-travel/3-nian": {
+   "hash": "c31e8e539078",
+   "seconds": 5.52
+  },
+  "wormhole-travel/4-dad": {
+   "hash": "3555d6d98630",
+   "seconds": 21.34
+  },
+  "wormhole-travel/4-nian": {
+   "hash": "783b61293885",
+   "seconds": 5.78
+  },
+  "wormhole-travel/5-dad": {
+   "hash": "107fd5c7a4d4",
+   "seconds": 22.73
+  },
+  "wormhole-travel/5-nian": {
+   "hash": "894ba592af0d",
+   "seconds": 7.18
+  },
+  "wormhole-travel/6-dad": {
+   "hash": "2b676545cc0e",
+   "seconds": 14.3
+  },
+  "wormhole-travel/6-nian": {
+   "hash": "297c45ccbf8c",
+   "seconds": 17.52
+  }
+ }
+}

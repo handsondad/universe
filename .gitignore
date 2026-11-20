@@ -1,0 +1,30 @@
+# 依赖
+node_modules/
+yarn.lock
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+npm-debug.log*
+
+# 临时文件
+*.tmp
+.cache/
+.codegraph/
+.vite/
+# npm run story:frames 的联系表
+.story-preview/
+
+# 构建输出
+dist/
+build/

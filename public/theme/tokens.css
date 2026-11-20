@@ -1,0 +1,37 @@
+/*
+ * 「奇遇记」系列的共用底色（与身体奇遇记、化学奇遇记、物理奇遇记、生物奇遇记同一套：暖白纸面、棕色文字、手写体），
+ * 每个领域只换自己的强调色——宇宙奇遇记是星空紫 #5b3e96。
+ */
+:root {
+  --cv-bg: #fff8f0;
+  --cv-surface: #ffffff;
+  --cv-raised: #fff5ec;
+  --cv-inset: #fdf5ec;
+  --cv-selected: #efe9fa;
+  --cv-border: #ffe0cc;
+  --cv-border-strong: #ffd0b0;
+  --cv-text: #5d4e37;
+  --cv-text-2: #6b5a42;
+  --cv-muted: #8b7a5c;
+  --cv-subtle: #9a8866;
+  --cv-accent: #5b3e96;
+  --cv-accent-hover: #482f7a;
+  --cv-accent-ink: #ffffff;
+  --cv-accent-soft: #efe9fa;
+  --cv-accent-border: #c5b3e6;
+  --cv-success: #2c774a;
+  --cv-success-soft: #e7f3eb;
+  --cv-warning: #8f5710;
+  --cv-warning-soft: #fff4e0;
+  --cv-warning-border: #f3d3a0;
+  --cv-danger: #b03f38;
+  --cv-danger-soft: #fbeae7;
+  --cv-font: 'Comic Neue', 'Ma Shan Zheng', 'Microsoft YaHei', 'PingFang SC', cursive;
+  --cv-mono: Consolas, ui-monospace, monospace;
+  --cv-radius-panel: 18px;
+  --cv-radius-control: 12px;
+  --cv-shadow-sm: 0 2px 6px rgba(255, 111, 107, 0.1);
+  --cv-shadow: 0 8px 20px rgba(255, 111, 107, 0.18);
+  --cv-page: linear-gradient(180deg, #fff8f0 0%, #f3f1ff 50%, #fff0e6 100%);
+  color-scheme: light;
+}

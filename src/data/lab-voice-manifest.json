@@ -1,0 +1,338 @@
+{
+ "voices": {
+  "nian": {
+   "voice": "zh-CN-YunxiaNeural",
+   "rate": "+0%"
+  },
+  "dad": {
+   "voice": "zh-CN-YunxiNeural",
+   "rate": "-5%"
+  }
+ },
+ "clips": {
+  "lab/black-hole-lab/0-concl": {
+   "hash": "d5e2911be2dc",
+   "seconds": 7.9
+  },
+  "lab/black-hole-lab/0-q": {
+   "hash": "e0d5f9b8d371",
+   "seconds": 4.9
+  },
+  "lab/black-hole-lab/0-seen": {
+   "hash": "9fa907c18a6d",
+   "seconds": 10.03
+  },
+  "lab/black-hole-lab/1-concl": {
+   "hash": "ef3a5b2faa94",
+   "seconds": 8.4
+  },
+  "lab/black-hole-lab/1-q": {
+   "hash": "611d4ffc006a",
+   "seconds": 5.38
+  },
+  "lab/black-hole-lab/1-seen": {
+   "hash": "eab9a6cc494f",
+   "seconds": 10.56
+  },
+  "lab/black-hole-lab/2-concl": {
+   "hash": "9d4fd4686b28",
+   "seconds": 9.17
+  },
+  "lab/black-hole-lab/2-q": {
+   "hash": "9a0d45671b4e",
+   "seconds": 6.12
+  },
+  "lab/black-hole-lab/2-seen": {
+   "hash": "a24f1f77657b",
+   "seconds": 10.61
+  },
+  "lab/black-hole-lab/3-concl": {
+   "hash": "fba7d9cfc992",
+   "seconds": 8.95
+  },
+  "lab/black-hole-lab/3-q": {
+   "hash": "e5447f5cb6c9",
+   "seconds": 4.1
+  },
+  "lab/black-hole-lab/3-seen": {
+   "hash": "8e181cd7c1eb",
+   "seconds": 9.36
+  },
+  "lab/earth-seasons-lab/0-concl": {
+   "hash": "378cad8dcfa3",
+   "seconds": 9.91
+  },
+  "lab/earth-seasons-lab/0-q": {
+   "hash": "5e81e4c38563",
+   "seconds": 5.66
+  },
+  "lab/earth-seasons-lab/0-seen": {
+   "hash": "e11e8473eb11",
+   "seconds": 10.85
+  },
+  "lab/earth-seasons-lab/1-concl": {
+   "hash": "5700c1d99d3c",
+   "seconds": 9.86
+  },
+  "lab/earth-seasons-lab/1-q": {
+   "hash": "9977e77bd3ac",
+   "seconds": 5.81
+  },
+  "lab/earth-seasons-lab/1-seen": {
+   "hash": "4830cc7f5f0f",
+   "seconds": 11.04
+  },
+  "lab/earth-seasons-lab/2-concl": {
+   "hash": "21c3bc5ef212",
+   "seconds": 7.75
+  },
+  "lab/earth-seasons-lab/2-q": {
+   "hash": "ed364e7a95f3",
+   "seconds": 5.66
+  },
+  "lab/earth-seasons-lab/2-seen": {
+   "hash": "3597621636a7",
+   "seconds": 9.53
+  },
+  "lab/earth-seasons-lab/3-concl": {
+   "hash": "fafbde8d5a9c",
+   "seconds": 9.07
+  },
+  "lab/earth-seasons-lab/3-q": {
+   "hash": "6efd2497813d",
+   "seconds": 5.83
+  },
+  "lab/earth-seasons-lab/3-seen": {
+   "hash": "1548914d5c24",
+   "seconds": 9.67
+  },
+  "lab/earth-seasons-lab/4-concl": {
+   "hash": "6413c6c152d7",
+   "seconds": 7.49
+  },
+  "lab/earth-seasons-lab/4-q": {
+   "hash": "021594769a85",
+   "seconds": 7.49
+  },
+  "lab/earth-seasons-lab/4-seen": {
+   "hash": "445db2c7c8e1",
+   "seconds": 11.28
+  },
+  "lab/gravity-orbit-lab/0-concl": {
+   "hash": "395bec770d71",
+   "seconds": 8.33
+  },
+  "lab/gravity-orbit-lab/0-q": {
+   "hash": "2e555e5cd5e6",
+   "seconds": 7.46
+  },
+  "lab/gravity-orbit-lab/0-seen": {
+   "hash": "621e77d5199d",
+   "seconds": 8.23
+  },
+  "lab/gravity-orbit-lab/1-concl": {
+   "hash": "56c667f6c1b6",
+   "seconds": 8.86
+  },
+  "lab/gravity-orbit-lab/1-q": {
+   "hash": "c4e2bda4ca10",
+   "seconds": 5.42
+  },
+  "lab/gravity-orbit-lab/1-seen": {
+   "hash": "e7b58e619309",
+   "seconds": 11.35
+  },
+  "lab/gravity-orbit-lab/2-concl": {
+   "hash": "a6d09825d7d2",
+   "seconds": 10.06
+  },
+  "lab/gravity-orbit-lab/2-q": {
+   "hash": "dcd20a8f4d13",
+   "seconds": 6.05
+  },
+  "lab/gravity-orbit-lab/2-seen": {
+   "hash": "eb765d8896ec",
+   "seconds": 10.68
+  },
+  "lab/gravity-orbit-lab/3-concl": {
+   "hash": "df4f438bb43b",
+   "seconds": 10.46
+  },
+  "lab/gravity-orbit-lab/3-q": {
+   "hash": "bc7f5d65999e",
+   "seconds": 6.1
+  },
+  "lab/gravity-orbit-lab/3-seen": {
+   "hash": "abe0518f4f61",
+   "seconds": 9.5
+  },
+  "lab/moon-eclipse-lab/0-concl": {
+   "hash": "e11f84e15863",
+   "seconds": 8.57
+  },
+  "lab/moon-eclipse-lab/0-q": {
+   "hash": "89c222fe741b",
+   "seconds": 5.45
+  },
+  "lab/moon-eclipse-lab/0-seen": {
+   "hash": "5fb948439016",
+   "seconds": 9.77
+  },
+  "lab/moon-eclipse-lab/1-concl": {
+   "hash": "b3924641c63e",
+   "seconds": 8.64
+  },
+  "lab/moon-eclipse-lab/1-q": {
+   "hash": "c1ff03eb3da7",
+   "seconds": 5.45
+  },
+  "lab/moon-eclipse-lab/1-seen": {
+   "hash": "e3d34fa44a56",
+   "seconds": 9.86
+  },
+  "lab/moon-eclipse-lab/2-concl": {
+   "hash": "616acc530c01",
+   "seconds": 8.54
+  },
+  "lab/moon-eclipse-lab/2-q": {
+   "hash": "f137c8066c86",
+   "seconds": 6.17
+  },
+  "lab/moon-eclipse-lab/2-seen": {
+   "hash": "45ffd8a147f6",
+   "seconds": 9.94
+  },
+  "lab/moon-eclipse-lab/3-concl": {
+   "hash": "ef6bb3681fc6",
+   "seconds": 10.22
+  },
+  "lab/moon-eclipse-lab/3-q": {
+   "hash": "e94cb8239684",
+   "seconds": 5.88
+  },
+  "lab/moon-eclipse-lab/3-seen": {
+   "hash": "93e2cf71c76e",
+   "seconds": 11.54
+  },
+  "lab/moon-eclipse-lab/4-concl": {
+   "hash": "c54d03a38756",
+   "seconds": 8.74
+  },
+  "lab/moon-eclipse-lab/4-q": {
+   "hash": "1213c772051c",
+   "seconds": 5.38
+  },
+  "lab/moon-eclipse-lab/4-seen": {
+   "hash": "4bd2b572d722",
+   "seconds": 9.19
+  },
+  "lab/solar-system-lab/0-concl": {
+   "hash": "f3af04e0e6fe",
+   "seconds": 8.83
+  },
+  "lab/solar-system-lab/0-q": {
+   "hash": "7c1d38c36eff",
+   "seconds": 4.82
+  },
+  "lab/solar-system-lab/0-seen": {
+   "hash": "0ca92a664731",
+   "seconds": 11.42
+  },
+  "lab/solar-system-lab/1-concl": {
+   "hash": "5baebeb00244",
+   "seconds": 8.93
+  },
+  "lab/solar-system-lab/1-q": {
+   "hash": "1a0210125a18",
+   "seconds": 6.58
+  },
+  "lab/solar-system-lab/1-seen": {
+   "hash": "1a659aa43fbb",
+   "seconds": 7.42
+  },
+  "lab/solar-system-lab/2-concl": {
+   "hash": "fba81cfdf665",
+   "seconds": 8.3
+  },
+  "lab/solar-system-lab/2-q": {
+   "hash": "75f2e25065b6",
+   "seconds": 5.23
+  },
+  "lab/solar-system-lab/2-seen": {
+   "hash": "52acf181dd9a",
+   "seconds": 9.48
+  },
+  "lab/solar-system-lab/3-concl": {
+   "hash": "b3b6349c8686",
+   "seconds": 7.87
+  },
+  "lab/solar-system-lab/3-q": {
+   "hash": "7f038c7589e1",
+   "seconds": 4.1
+  },
+  "lab/solar-system-lab/3-seen": {
+   "hash": "e0f32a7a3b5f",
+   "seconds": 10.73
+  },
+  "lab/star-lifecycle-lab/0-concl": {
+   "hash": "a34fee71575c",
+   "seconds": 8.11
+  },
+  "lab/star-lifecycle-lab/0-q": {
+   "hash": "fcc96846927a",
+   "seconds": 5.28
+  },
+  "lab/star-lifecycle-lab/0-seen": {
+   "hash": "604968b1e1c1",
+   "seconds": 9.5
+  },
+  "lab/star-lifecycle-lab/1-concl": {
+   "hash": "f979974dd409",
+   "seconds": 7.99
+  },
+  "lab/star-lifecycle-lab/1-q": {
+   "hash": "88688d2e12da",
+   "seconds": 5.71
+  },
+  "lab/star-lifecycle-lab/1-seen": {
+   "hash": "3d64e4b477fe",
+   "seconds": 10.22
+  },
+  "lab/star-lifecycle-lab/2-concl": {
+   "hash": "330ba220bdcc",
+   "seconds": 8.98
+  },
+  "lab/star-lifecycle-lab/2-q": {
+   "hash": "a6e0c3913384",
+   "seconds": 5.06
+  },
+  "lab/star-lifecycle-lab/2-seen": {
+   "hash": "6bc7148be9f7",
+   "seconds": 9.43
+  },
+  "lab/star-lifecycle-lab/3-concl": {
+   "hash": "3c90f0e285eb",
+   "seconds": 7.82
+  },
+  "lab/star-lifecycle-lab/3-q": {
+   "hash": "250a8ca793e5",
+   "seconds": 4.66
+  },
+  "lab/star-lifecycle-lab/3-seen": {
+   "hash": "56c31fde370d",
+   "seconds": 9.91
+  },
+  "lab/star-lifecycle-lab/4-concl": {
+   "hash": "98addd03850a",
+   "seconds": 12.17
+  },
+  "lab/star-lifecycle-lab/4-q": {
+   "hash": "64d9ffa9682f",
+   "seconds": 5.71
+  },
+  "lab/star-lifecycle-lab/4-seen": {
+   "hash": "3a15b4c2d2a9",
+   "seconds": 10.08
+  }
+ }
+}
