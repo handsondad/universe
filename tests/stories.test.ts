@@ -55,6 +55,32 @@ describe('小念 × 爸爸 universe stories', () => {
     }
   });
 
+  it('lay out colour scales as real HTML text that can restack on phones', () => {
+    const markup = renderFigure({
+      kind: 'scale', caption: '星星越热越偏蓝', axis: '表面越来越热 →',
+      stops: [
+        { label: '约 3000 ℃', note: '偏红', color: '#ff8a5c' },
+        { label: '约 5500 ℃', note: '太阳·黄白', color: '#ffe9a8', hot: true },
+        { label: '约 20000 ℃', note: '偏蓝', color: '#1c3f8f' },
+      ],
+    }, 2).value;
+    expect(markup).not.toContain('<svg');
+    expect(markup).toContain('<p class="fig-stops-axis is-directed">表面越来越热</p>');
+    expect(markup).toContain('style="--n:3"');
+    expect(markup).toMatch(/<li class="is-hot" style="--stop:#ffe9a8;--ink:#5d4e37">\s*<b>约 5500 ℃<\/b><small>太阳·黄白<\/small>/);
+    expect(markup).toContain('--stop:#1c3f8f;--ink:#ffffff');
+  });
+
+  it('lay out bar comparisons as real HTML text with bars scaled to the largest value', () => {
+    const markup = renderFigure({
+      kind: 'bars', caption: '木星最大', unit: '千米',
+      bars: [{ label: '地球', value: 12742 }, { label: '木星', value: 139820, hot: true, text: '约 14 万千米' }],
+    }, 1).value;
+    expect(markup).not.toContain('<svg');
+    expect(markup).toMatch(/<li class="" style="--f:0\.091">\s*<b>地球<\/b><span><i><\/i><small>12742 千米<\/small>/);
+    expect(markup).toMatch(/<li class="is-hot" style="--f:1\.000">\s*<b>木星<\/b><span><i><\/i><small>约 14 万千米<\/small>/);
+  });
+
   it('render every moment of every film without broken numbers or text', () => {
     for (const story of filmed) {
       story.film.scenes.forEach((scene, index) => {

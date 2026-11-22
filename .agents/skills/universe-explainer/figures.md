@@ -7,8 +7,8 @@
 | kind | 用来 | 字段 | 检查器的限制 |
 |---|---|---|---|
 | `sim` | 能拖滑块的互动图（主力） | `sim`、`caption` | 必须是下表里有的名字；每篇 1–2 张 |
-| `bars` | 横向柱状对比（行星大小、距离、温度） | `caption`、`unit`、`bars: { label, value, text?, hot? }[]` | 2–6 根；名字 ≤6 字、柱尾的数 ≤12 字；数值 > 0 |
-| `scale` | 色阶横尺（恒星颜色和温度、光谱波段） | `caption`、`axis?`、`stops: { label, note, color, hot? }[]` | 3–5 档；标签 ≤7 字、说明 ≤9 字；顶栏 ≤14 字 |
+| `bars` | 横向柱状对比（行星大小、距离、温度） | `caption`、`unit`、`bars: { label, value, text?, hot? }[]` | 2–6 根；名字 ≤6 字、柱尾的数 ≤12 字；数值 > 0。用 HTML 排（和物理奇遇记同一套）：柱长按最大值等比伸缩，手机上名字和数字也是正常字号 |
+| `scale` | 色阶横尺（恒星颜色和温度、光谱波段） | `caption`、`axis?`、`stops: { label, note, color, hot? }[]` | 3–5 档；标签 ≤7 字、说明 ≤9 字；顶栏 ≤14 字。用 HTML 排（和化学奇遇记同一套）：宽时横着一排，窄时一档一行（色块在左、说明在右），`axis` 末尾的「→」跟着变成「↓」 |
 | `image` | 真照片（NASA / ESA / ESO） | `src`、`alt`、`caption`、`credit`、`href` | `/images/photos/` 下的必须写 `credit` 和 https 的 `href`，见 sources.md |
 
 宽的 `sim` 会排在两个气泡下面单独一行；其余的放在爸爸气泡里。
